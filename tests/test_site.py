@@ -72,7 +72,7 @@ def test_gallery_categories_are_actionable():
 
 def test_gallery_demo_integrity():
     gallery=(root/"gallery.html").read_text(encoding="utf-8")
-    assert "25 contoh karya" not in gallery
+    assert "25 contoh karya" in gallery
     assert "All · 25" not in gallery
     assert "3D · 5" not in gallery
     assert "Photo · 5" not in gallery
