@@ -116,7 +116,7 @@ Deno.serve(async (req) => {
 
   results.sort((a, b) => b.match_score - a.match_score);
   return json({
-    evaluator_version: "1.0.0",
+    evaluator_version: "1.1.0",
     user_id: user.id,
     content_type: body.content_type,
     disclaimer: "Pre-submission assessment only. Final acceptance remains with the external platform.",
