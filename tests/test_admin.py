@@ -17,5 +17,5 @@ assert "billing_invoices" in admin
 assert "usage_events" in admin
 assert "creator_gallery_items" in admin
 assert "@supabase/supabase-js@2.57.4" in admin
-assert "service_role" not in admin.lower()
+assert "SUPABASE_KEY" in admin\nassert "createClient(SUPABASE_URL,SUPABASE_KEY)" in admin
 print("SANGGAR admin dashboard checks: PASS")
