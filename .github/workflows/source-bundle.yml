@@ -1,0 +1,24 @@
+name: SANGGAR Source Bundle
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Package source
+        run: |
+          mkdir -p release
+          zip -r release/SANGGAR-CREATIVE-OS-source-${GITHUB_SHA:0:12}.zip . -x ".git/*" "release/*"
+          sha256sum release/*.zip > release/SHA256SUMS.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SANGGAR-CREATIVE-OS-source
+          path: release/
+          retention-days: 30
