@@ -20,6 +20,12 @@ for asset in re.findall(r'(?:href|src)="([^"#][^"]*)', html):
     assert (root/path).exists(), f"missing asset: {asset}"
 assert "javascript:" not in html.lower()
 assert "innerHTML" not in js
+assert "Identity → Data → Workflow → Intelligence → Economy" in html
+assert "Learn → Create → Prove → Work → Grow → Evolve" not in html
+assert "Belajar. Berkarya." not in html
+assert "assets/hero-visual.svg" in html
+assert (root/"assets/hero-visual.svg").exists()
+
 app=(root/"app.html").read_text()
 assert "createClient" in app
 assert "SUPABASE_KEY" in app
