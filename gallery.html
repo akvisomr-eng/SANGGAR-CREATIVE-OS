@@ -62,41 +62,11 @@ const visible=DEMOS.filter(x=>filter==="all"||x[0]===filter);
 document.getElementById("catalogTitle").textContent=filterLabels[filter];
 document.querySelectorAll(".gallery-filter").forEach(a=>a.classList.toggle("active",a.dataset.filter===filter));
 const REALISTIC_IMAGES={
-  3d:[
-    "https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    "https://images.pexels.com/photos/3769847/pexels-photo-3769847.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    "https://images.pexels.com/photos/386236/pexels-photo-386236.jpeg?auto=compress&cs=tinysrgb&w=1200"
-  ],
-  photo:[
-    "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    "https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    "https://images.pexels.com/photos/753325/pexels-photo-753325.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    "https://images.pexels.com/photos/1796730/pexels-photo-1796730.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    "https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=1200"
-  ],
-  design:[
-    "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    "https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    "https://images.pexels.com/photos/4348404/pexels-photo-4348404.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    "https://images.pexels.com/photos/6444/pencil-typography-black-design.jpg?auto=compress&cs=tinysrgb&w=1200",
-    "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1200"
-  ],
-  motion:[
-    "https://images.pexels.com/photos/1166643/pexels-photo-1166643.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    "https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    "https://images.pexels.com/photos/7130536/pexels-photo-7130536.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    "https://images.pexels.com/photos/1252890/pexels-photo-1252890.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    "https://images.pexels.com/photos/1699030/pexels-photo-1699030.jpeg?auto=compress&cs=tinysrgb&w=1200"
-  ],
-  audio:[
-    "https://images.pexels.com/photos/164829/pexels-photo-164829.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    "https://images.pexels.com/photos/63703/pexels-photo-63703.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    "https://images.pexels.com/photos/3777075/pexels-photo-3777075.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    "https://images.pexels.com/photos/4088012/pexels-photo-4088012.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    "https://images.pexels.com/photos/394565/pexels-photo-394565.jpeg?auto=compress&cs=tinysrgb&w=1200"
-  ]
+  3d:["https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&q=88&w=1400","https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=88&w=1400","https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=88&w=1400","https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?auto=format&fit=crop&q=88&w=1400","https://images.unsplash.com/photo-1633412802994-5c058f151b66?auto=format&fit=crop&q=88&w=1400"],
+  photo:["https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&q=88&w=1400","https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&q=88&w=1400","https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&q=88&w=1400","https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&q=88&w=1400","https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=88&w=1400"],
+  design:["https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=88&w=1400","https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&q=88&w=1400","https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=88&w=1400","https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&q=88&w=1400","https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&q=88&w=1400"],
+  motion:["https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&q=88&w=1400","https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&q=88&w=1400","https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=88&w=1400","https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=88&w=1400","https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&q=88&w=1400"],
+  audio:["https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&q=88&w=1400","https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&q=88&w=1400","https://images.unsplash.com/photo-1598387993281-cecf8b71a8f8?auto=format&fit=crop&q=88&w=1400","https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&q=88&w=1400","https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&fit=crop&q=88&w=1400"]
 };
 function demoImage(type,title,index){
  const set=REALISTIC_IMAGES[type]||[];
