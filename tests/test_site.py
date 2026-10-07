@@ -20,7 +20,11 @@ for asset in re.findall(r'(?:href|src)="([^"#][^"]*)', html):
     assert (root/path).exists(), f"missing asset: {asset}"
 assert "javascript:" not in html.lower()
 assert "innerHTML" not in js
+app=(root/"app.html").read_text()
+assert "createClient" in app
+assert "service_role" not in app
+assert "SUPABASE_KEY" in app
 assert "position:sticky" in css
-for required in ["academy.html","gallery.html","journey.html","404.html","robots.txt","sitemap.xml",".well-known/security.txt"]:
+for required in ["academy.html","gallery.html","journey.html","app.html","404.html","robots.txt","sitemap.xml",".well-known/security.txt"]:
     assert (root/required).exists(), f"missing required asset: {required}"
 print("SANGGAR static quality checks: PASS")
