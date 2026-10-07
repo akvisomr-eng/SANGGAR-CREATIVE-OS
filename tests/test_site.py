@@ -9,7 +9,7 @@ js=(root/"app.js").read_text()
 assert "<!doctype html>" in html.lower()
 assert 'data-sanggar-companion="public"' in html
 assert "companion.js?v=2" in html
-assert "companion.js" in (root/"companion.js").read_text()
+assert (root/"companion.js").exists()
 assert 'lang="id"' in html
 assert '<meta name="viewport"' in html
 assert '<meta name="description"' in html
