@@ -1,65 +1,68 @@
 <!doctype html>
-<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="SANGGAR Creator Gallery — galeri karya digital, visual, 3D, motion, audio dan creative commerce.">
-<title>Creator Gallery — SANGGAR</title>
+<html lang="id">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="SANGGAR Creator Gallery — karya, skill, portfolio, marketplace dan peluang dalam satu creative ecosystem.">
+<title>Creator Gallery — SANGGAR CREATIVE OS</title>
 <link rel="canonical" href="https://akvisomr-eng.github.io/SANGGAR-CREATIVE-OS/gallery.html">
-<link rel="stylesheet" href="styles.css"></head>
+<link rel="stylesheet" href="styles.css">
+<style>
+.gallery-os{background:#07090d;min-height:100vh}.gallery-command{max-width:1500px;margin:auto;padding:28px 6vw 0;display:flex;justify-content:space-between;gap:20px;align-items:center}.gallery-breadcrumb{font-size:.7rem;letter-spacing:.14em;opacity:.48}.gallery-status{font-size:.68rem;padding:8px 12px;border:1px solid rgba(255,255,255,.1);border-radius:999px;color:#9bdfff}.gallery-intro{max-width:1500px;margin:auto;padding:100px 6vw 65px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,.5fr);gap:70px}.gallery-intro h1{font-size:clamp(4rem,9vw,8.8rem);line-height:.82;letter-spacing:-.08em;margin:12px 0 28px}.gallery-intro h1 em{font-style:normal;opacity:.38}.gallery-intro .lead{max-width:760px;font-size:1.08rem;line-height:1.8;opacity:.62}.gallery-principle{align-self:end;border-left:1px solid rgba(255,255,255,.16);padding:20px 0 20px 25px}.gallery-principle small{display:block;opacity:.42;letter-spacing:.16em;margin-bottom:12px}.gallery-principle strong{font-size:1.5rem;line-height:1.35;display:block}.gallery-path{max-width:1500px;margin:auto;padding:0 6vw 55px;display:flex;gap:8px;flex-wrap:wrap}.path-step{padding:10px 14px;border:1px solid rgba(255,255,255,.1);border-radius:999px;background:rgba(255,255,255,.035);font-size:.72rem;font-weight:800}.path-arrow{opacity:.25;padding:10px 0}.gallery-catalog{max-width:1500px;margin:auto;padding:0 6vw 110px}.catalog-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:25px}.catalog-head h2{font-size:2.4rem;letter-spacing:-.05em;margin:5px 0}.catalog-head p{opacity:.48;max-width:600px;line-height:1.6}.gallery-filters{display:flex;gap:8px;flex-wrap:wrap}.gallery-filter{border:1px solid rgba(255,255,255,.12);background:#0e1219;color:#dfe9f5;border-radius:999px;padding:10px 16px;text-decoration:none;font-size:.75rem;font-weight:800;cursor:pointer}.gallery-filter:hover,.gallery-filter.active{background:#fff;color:#080a0e}.gallery-grid-os{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.demo-card{min-width:0;border:1px solid rgba(255,255,255,.09);border-radius:20px;overflow:hidden;background:#0d1118;transition:.25s transform,.25s border-color,.25s box-shadow}.demo-card:hover{transform:translateY(-7px);border-color:rgba(142,215,255,.45);box-shadow:0 25px 70px rgba(0,0,0,.35)}.demo-card[hidden]{display:none}.demo-media{aspect-ratio:1/1;overflow:hidden;position:relative;background:#121720}.demo-media img{width:100%;height:100%;object-fit:cover;display:block}.demo-media:after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.7));pointer-events:none}.demo-index{position:absolute;z-index:2;top:14px;left:14px;font-size:.62rem;padding:7px 9px;border-radius:999px;background:rgba(0,0,0,.48);backdrop-filter:blur(8px)}.demo-type{position:absolute;z-index:2;right:14px;bottom:14px;font-size:.6rem;letter-spacing:.12em;font-weight:900}.demo-info{padding:16px}.demo-info h3{font-size:1rem;margin:0 0 7px}.demo-info p{font-size:.73rem;line-height:1.55;opacity:.48;margin:0}.demo-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:13px}.demo-tags span{font-size:.58rem;border:1px solid rgba(255,255,255,.1);padding:5px 7px;border-radius:999px;opacity:.55}.live-zone{margin-top:70px;padding:28px;border-radius:24px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(120deg,rgba(255,255,255,.04),rgba(255,255,255,.012))}.live-zone h3{margin:0 0 7px}.live-zone p{opacity:.48;margin:0}.gallery-final{max-width:1380px;margin:0 auto 100px;padding:70px 6vw;border:1px solid rgba(255,255,255,.1);border-radius:30px;background:radial-gradient(circle at 20% 20%,rgba(0,210,180,.08),transparent 35%),radial-gradient(circle at 80% 70%,rgba(112,92,255,.1),transparent 35%);text-align:center}.gallery-final h2{font-size:clamp(2.8rem,6vw,6rem);letter-spacing:-.07em;margin:10px 0 18px}.gallery-final p{max-width:680px;margin:0 auto 28px;line-height:1.7;opacity:.58}@media(max-width:1000px){.gallery-intro{grid-template-columns:1fr}.gallery-principle{display:none}.gallery-grid-os{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.gallery-command{padding-left:22px;padding-right:22px}.gallery-intro{padding:75px 22px 50px}.gallery-intro h1{font-size:4rem}.gallery-path,.gallery-catalog{padding-left:22px;padding-right:22px}.gallery-grid-os{grid-template-columns:1fr}.catalog-head{display:block}.gallery-filters{margin-top:22px}.path-arrow{display:none}}
+</style></head>
 <body data-sanggar-companion="public">
 <header class="top"><a class="brand" href="index.html">SANGGAR<span>OS</span></a><nav><a href="index.html">Home</a><a href="academy.html">Academy</a><a class="active" href="gallery.html">Gallery</a><a href="journey.html">Journey</a><a href="app.html">Workspace</a></nav></header>
-<main class="gallery-page">
-<section class="gallery-hero">
-<div><p class="eyebrow">SANGGAR CREATOR GALLERY</p><h1>Ideas made <em>visible.</em></h1><p class="lead">Galeri karya creator—dari visual, 3D, motion, design hingga audio—yang dibangun untuk ditemukan, diapresiasi, dan membuka peluang.</p>
-<div class="actions"><a class="button gradient" href="app.html">Tampilkan karya →</a><a class="ghost" href="journey.html">Bangun karya saya</a></div></div>
-<div class="gallery-hero-note"><span>CURATED CREATIVE WORK</span><strong>CREATE.</strong><strong>SHOW.</strong><strong>CONNECT.</strong></div>
+<main class="gallery-os">
+<section class="gallery-command"><span class="gallery-breadcrumb">SANGGAR / CREATIVE COMMERCE / GALLERY</span><span class="gallery-status">● CREATOR ECOSYSTEM</span></section>
+<section class="gallery-intro">
+<div><p class="eyebrow">CREATOR GALLERY · SHOW → PROVE → CONNECT</p><h1>Karya menjadi <em>peluang.</em></h1><p class="lead">Gallery SANGGAR bukan hanya tempat memajang gambar. Setiap karya adalah bagian dari perjalanan creator: skill yang dipelajari, proyek yang dibuat, bukti kemampuan yang dibangun, portfolio yang diverifikasi, lalu diarahkan menuju marketplace, client work, licensing, atau peluang kerja.</p><div class="actions"><a class="button gradient" href="app.html">Bangun karya →</a><a class="ghost" href="journey.html">Mulai Creator Journey</a></div></div>
+<div class="gallery-principle"><small>SANGGAR CREATIVE OS</small><strong>Learn.<br>Create.<br>Prove.<br>Publish.<br>Work.<br>Grow.</strong></div>
 </section>
-<section class="gallery-toolbar"><div><p class="eyebrow">EXPLORE WORK</p><h2>Karya pilihan creator</h2></div><div class="gallery-filters"><a class="gallery-filter active" href="gallery.html" data-ai-context="Semua karya creator">All</a><a class="gallery-filter" href="gallery.html?category=3d" data-ai-context="Karya 3D dan AR">3D</a><a class="gallery-filter" href="gallery.html?category=photo" data-ai-context="Karya photography">Photo</a><a class="gallery-filter" href="gallery.html?category=design" data-ai-context="Karya design">Design</a><a class="gallery-filter" href="gallery.html?category=motion" data-ai-context="Karya motion dan video">Motion</a><a class="gallery-filter" href="gallery.html?category=audio" data-ai-context="Karya audio dan music">Audio</a></div></section>
-<section id="creatorGallery" class="masonry-gallery" aria-label="Creator works"><div id="galleryLoading" class="gallery-empty"><span>LOADING CREATOR WORKS</span><strong>Membaca karya yang dipublish…</strong></div>
-
+<section class="gallery-path" aria-label="Creator flow"><span class="path-step">01 Learn</span><i class="path-arrow">→</i><span class="path-step">02 Create</span><i class="path-arrow">→</i><span class="path-step">03 Prove</span><i class="path-arrow">→</i><span class="path-step">04 Publish</span><i class="path-arrow">→</i><span class="path-step">05 Match</span><i class="path-arrow">→</i><span class="path-step">06 Work</span><i class="path-arrow">→</i><span class="path-step">07 Grow</span></section>
+<section class="gallery-catalog">
+<div class="catalog-head"><div><p class="eyebrow">EXPLORE CREATIVE WORK</p><h2 id="catalogTitle">25 contoh karya</h2><p id="catalogDescription">Contoh karya untuk memperlihatkan bagaimana SANGGAR mengelompokkan creator berdasarkan bentuk karya dan jalur komersialisasinya.</p></div><div class="gallery-filters"><a class="gallery-filter active" data-filter="all" href="gallery.html">All · 25</a><a class="gallery-filter" data-filter="3d" href="gallery.html?category=3d">3D · 5</a><a class="gallery-filter" data-filter="photo" href="gallery.html?category=photo">Photo · 5</a><a class="gallery-filter" data-filter="design" href="gallery.html?category=design">Design · 5</a><a class="gallery-filter" data-filter="motion" href="gallery.html?category=motion">Motion · 5</a><a class="gallery-filter" data-filter="audio" href="gallery.html?category=audio">Audio · 5</a></div></div>
+<div id="demoGrid" class="gallery-grid-os"></div>
+<div class="live-zone"><p class="eyebrow">LIVE CREATOR WORKS</p><h3>Karya creator yang benar-benar dipublish</h3><p id="liveStatus">Menghubungkan Gallery dengan SANGGAR Workspace…</p><div id="liveGrid" class="gallery-grid-os" style="margin-top:20px"></div></div>
 </section>
-<section class="gallery-cta"><p class="eyebrow">YOUR WORK BELONGS HERE</p><h2>Dari karya menjadi <em>peluang.</em></h2><p>SANGGAR menghubungkan karya dengan portfolio, Creative Passport, assessment, marketplace, licensing, dan peluang kerja.</p><a class="button gradient" href="app.html">Masuk ke Workspace →</a></section>
+<section class="gallery-final"><p class="eyebrow">FROM WORK TO OPPORTUNITY</p><h2>Jangan berhenti di upload.</h2><p>SANGGAR menghubungkan karya dengan evidence, portfolio, Creative Passport, assessment, marketplace matching, submission package, licensing, client work, dan pengembangan skill berikutnya.</p><a class="button gradient" href="app.html">Masuk Workspace →</a></section>
 </main>
-<footer><span>© SANGGAR CREATIVE OS</span><span>Creator Gallery · Create → Show → Connect</span></footer>
+<footer><span>© SANGGAR CREATIVE OS</span><span>Identity → Data → Workflow → Intelligence → Economy</span></footer>
 <script>
-(function(){const q=new URLSearchParams(location.search).get("category");const map={all:"All",3d:"3D",photo:"Photo",design:"Design",motion:"Motion",audio:"Audio"};const key=q&&map[q]?q:"all";document.querySelectorAll(".gallery-filter").forEach(a=>{a.classList.toggle("active",(key==="all"&&a.textContent.trim()==="All")||a.getAttribute("href")===`gallery.html?category=${key}`)});document.querySelectorAll(".art-card").forEach(card=>{const type=card.dataset.category||"all";card.hidden=key!=="all"&&type!==key});const title=document.querySelector(".gallery-toolbar h2");if(title)title.textContent=key==="all"?"Karya pilihan creator":`Karya ${map[key]}`;document.querySelector(".gallery-toolbar")?.scrollIntoView({block:"start"});})();
-</script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4"></script><script>
-(async function(){
- const cfg={url:"https://auclznarnfooikmfmfvp.supabase.co",key:"sb_publishable_gKb7R1NTjV_zSP5WemDo7Q_Em0Pp4t5"};
- const db=window.supabase.createClient(cfg.url,cfg.key);
- const grid=document.getElementById("creatorGallery"), loading=document.getElementById("galleryLoading");
- const q=new URLSearchParams(location.search).get("category"); const labels={all:"All",3d:"3D",photo:"Photo",design:"Design",motion:"Motion",audio:"Audio"};
- const category=labels[q]?q:"all";
- document.querySelectorAll(".gallery-filter").forEach(a=>a.classList.toggle("active",a.getAttribute("href")===("gallery.html"+(category==="all"?"":"?category="+category))));
- const {data,error}=await db.from("creator_gallery_items").select("id,title,description,media_type,preview_url,external_url,status,featured,metadata,created_at").eq("status","published").order("featured",{ascending:false}).order("created_at",{ascending:false}).limit(60);
- if(loading)loading.remove();
- const items=(data||[]).filter(x=>{const m=x.metadata||{};const type=String(m.category||x.media_type||"").toLowerCase();return category==="all"||type===category||(category==="3d"&&type.includes("3d"))||(category==="photo"&&(type==="image"||type==="photo"))||(category==="motion"&&(type==="video"||type==="motion"))||(category==="design"&&(type==="design"||type==="illustration"));});const demoItems=[
-{id:"demo-3d-1",title:"Neon Object",description:"Karya demo 3D dan spatial creation.",media_type:"3d",preview_url:"assets/demo/3d-1.svg",metadata:{category:"3d"}},
-{id:"demo-3d-2",title:"Soft Geometry",description:"Karya demo 3D dan spatial creation.",media_type:"3d",preview_url:"assets/demo/3d-2.svg",metadata:{category:"3d"}},
-{id:"demo-3d-3",title:"Spatial Cube",description:"Karya demo 3D dan spatial creation.",media_type:"3d",preview_url:"assets/demo/3d-3.svg",metadata:{category:"3d"}},
-{id:"demo-3d-4",title:"Orbit Sculpture",description:"Karya demo 3D dan spatial creation.",media_type:"3d",preview_url:"assets/demo/3d-4.svg",metadata:{category:"3d"}},
-{id:"demo-3d-5",title:"Future Interior",description:"Karya demo 3D dan spatial creation.",media_type:"3d",preview_url:"assets/demo/3d-5.svg",metadata:{category:"3d"}},
-{id:"demo-photo-1",title:"Morning Architecture",description:"Karya demo photography dan visual storytelling.",media_type:"image",preview_url:"assets/demo/photo-1.svg",metadata:{category:"photo"}},
-{id:"demo-photo-2",title:"Tropical Street",description:"Karya demo photography dan visual storytelling.",media_type:"image",preview_url:"assets/demo/photo-2.svg",metadata:{category:"photo"}},
-{id:"demo-photo-3",title:"Golden Hour",description:"Karya demo photography dan visual storytelling.",media_type:"image",preview_url:"assets/demo/photo-3.svg",metadata:{category:"photo"}},
-{id:"demo-photo-4",title:"Night Market",description:"Karya demo photography dan visual storytelling.",media_type:"image",preview_url:"assets/demo/photo-4.svg",metadata:{category:"photo"}},
-{id:"demo-photo-5",title:"Quiet Workspace",description:"Karya demo photography dan visual storytelling.",media_type:"image",preview_url:"assets/demo/photo-5.svg",metadata:{category:"photo"}},
-{id:"demo-design-1",title:"Brand System",description:"Karya demo graphic dan visual design.",media_type:"design",preview_url:"assets/demo/design-1.svg",metadata:{category:"design"}},
-{id:"demo-design-2",title:"Editorial Grid",description:"Karya demo graphic dan visual design.",media_type:"design",preview_url:"assets/demo/design-2.svg",metadata:{category:"design"}},
-{id:"demo-design-3",title:"Product Poster",description:"Karya demo graphic dan visual design.",media_type:"design",preview_url:"assets/demo/design-3.svg",metadata:{category:"design"}},
-{id:"demo-design-4",title:"Digital Identity",description:"Karya demo graphic dan visual design.",media_type:"design",preview_url:"assets/demo/design-4.svg",metadata:{category:"design"}},
-{id:"demo-design-5",title:"Creative Campaign",description:"Karya demo graphic dan visual design.",media_type:"design",preview_url:"assets/demo/design-5.svg",metadata:{category:"design"}},
-{id:"demo-motion-1",title:"Light Trail",description:"Karya demo motion graphics dan animation.",media_type:"video",preview_url:"assets/demo/motion-1.svg",metadata:{category:"motion"}},
-{id:"demo-motion-2",title:"Kinetic Type",description:"Karya demo motion graphics dan animation.",media_type:"video",preview_url:"assets/demo/motion-2.svg",metadata:{category:"motion"}},
-{id:"demo-motion-3",title:"Liquid Motion",description:"Karya demo motion graphics dan animation.",media_type:"video",preview_url:"assets/demo/motion-3.svg",metadata:{category:"motion"}},
-{id:"demo-motion-4",title:"Signal Loop",description:"Karya demo motion graphics dan animation.",media_type:"video",preview_url:"assets/demo/motion-4.svg",metadata:{category:"motion"}},
-{id:"demo-motion-5",title:"Orbit Motion",description:"Karya demo motion graphics dan animation.",media_type:"video",preview_url:"assets/demo/motion-5.svg",metadata:{category:"motion"}},
-{id:"demo-audio-1",title:"Ambient Field",description:"Karya demo audio, music dan sound design.",media_type:"audio",preview_url:"assets/demo/audio-1.svg",metadata:{category:"audio"}},
-{id:"demo-audio-2",title:"Future Beat",description:"Karya demo audio, music dan sound design.",media_type:"audio",preview_url:"assets/demo/audio-2.svg",metadata:{category:"audio"}},
-{id:"demo-audio-3",title:"Voice Texture",description:"Karya demo audio, music dan sound design.",media_type:"audio",preview_url:"assets/demo/audio-3.svg",metadata:{category:"audio"}},
-{id:"demo-audio-4",title:"Cinematic Pulse",description:"Karya demo audio, music dan sound design.",media_type:"audio",preview_url:"assets/demo/audio-4.svg",metadata:{category:"audio"}},
-{id:"demo-audio-5",title:"Creator Podcast",description:"Karya demo audio, music dan sound design.",media_type:"audio",preview_url:"assets/demo/audio-5.svg",metadata:{category:"audio"}},
+const DEMOS=[
+["3d","Neon Object","assets/demo/3d-1.svg","3D / Spatial","Modeling","Marketplace"],
+["3d","Soft Geometry","assets/demo/3d-2.svg","3D / Spatial","Topology","Asset"],
+["3d","Spatial Cube","assets/demo/3d-3.svg","3D / AR","Modeling","AR"],
+["3d","Orbit Sculpture","assets/demo/3d-4.svg","3D / Art","Lighting","Portfolio"],
+["3d","Future Interior","assets/demo/3d-5.svg","3D / Interior","Visualization","Client Work"],
+["photo","Morning Architecture","assets/demo/photo-1.svg","Photography","Architecture","Stock"],
+["photo","Tropical Street","assets/demo/photo-2.svg","Photography","Street","Licensing"],
+["photo","Golden Hour","assets/demo/photo-3.svg","Photography","Lighting","Stock"],
+["photo","Night Market","assets/demo/photo-4.svg","Photography","Documentary","Editorial"],
+["photo","Quiet Workspace","assets/demo/photo-5.svg","Photography","Lifestyle","Commercial"],
+["design","Brand System","assets/demo/design-1.svg","Graphic Design","Branding","Client Work"],
+["design","Editorial Grid","assets/demo/design-2.svg","Graphic Design","Layout","Digital Asset"],
+["design","Product Poster","assets/demo/design-3.svg","Graphic Design","Campaign","Marketplace"],
+["design","Digital Identity","assets/demo/design-4.svg","Visual Identity","UI / Visual","Portfolio"],
+["design","Creative Campaign","assets/demo/design-5.svg","Art Direction","Campaign","Brand"],
+["motion","Light Trail","assets/demo/motion-1.svg","Motion Graphics","Effects","Client Work"],
+["motion","Kinetic Type","assets/demo/motion-2.svg","Motion Graphics","Typography","Commercial"],
+["motion","Liquid Motion","assets/demo/motion-3.svg","Animation","Simulation","Marketplace"],
+["motion","Signal Loop","assets/demo/motion-4.svg","Motion Design","Loop","Digital Media"],
+["motion","Orbit Motion","assets/demo/motion-5.svg","3D Motion","Animation","Portfolio"],
+["audio","Ambient Field","assets/demo/audio-1.svg","Audio","Soundscape","Licensing"],
+["audio","Future Beat","assets/demo/audio-2.svg","Music","Electronic","Licensing"],
+["audio","Voice Texture","assets/demo/audio-3.svg","Sound Design","Voice","Production"],
+["audio","Cinematic Pulse","assets/demo/audio-4.svg","Music","Scoring","Film / Media"],
+["audio","Creator Podcast","assets/demo/audio-5.svg","Audio","Podcast","Creator Business"]
 ];
-if(error||!items.length){items.push(...demoItems.filter(x=>category==="all"||x.metadata.category===category));}
-if(!items.length){grid.innerHTML='<div class="gallery-empty"><span>CREATOR GALLERY</span><strong>Belum ada contoh untuk kategori ini.</strong><p>Kembali ke semua karya atau mulai membuat karya pertama Anda.</p><a class="button gradient" href="gallery.html">Lihat semua karya →</a></div>';return;}
- grid.innerHTML=items.map((x,i)=>{const m=x.metadata||{},img=x.preview_url,cat=m.category||x.media_type||"work";const title=x.title||"Untitled work";const safeTitle=title.replace(/"/g,"&quot;");const target=String(x.id).startsWith("demo-")?"gallery.html?category="+encodeURIComponent(cat):"work.html?id="+x.id;return '<article class="art-card '+(i%5===0?'art-tall ':'')+(i%7===2?'art-wide ':'')+'" data-category="'+cat+'" data-ai-context="Creator Gallery '+safeTitle+'" role="link" tabindex="0" onclick="location.href=\''+target+'\'" onkeydown="if(event.key===\'Enter\')location.href=\''+target+'\'"><div class="art-visual '+(img?'has-image':'visual-'+cat)+'">'+(img?'<img src="'+img+'" alt="'+safeTitle+'" loading="lazy">':'<span>WORK</span>')+'<b>'+String(cat).toUpperCase()+'</b></div><div class="art-meta"><div><strong>'+title+'</strong><small>'+(x.description||"Creator work")+'</small></div><span>↗</span></div></article>';}).join("");
-})();
-</script><script src="companion.js?v=3" defer></script></body></html>
+const filterLabels={all:"25 contoh karya","3d":"5 karya 3D","photo":"5 karya Photo","design":"5 karya Design","motion":"5 karya Motion","audio":"5 karya Audio"};
+const q=new URLSearchParams(location.search).get("category"), filter=["3d","photo","design","motion","audio"].includes(q)?q:"all";
+document.getElementById("catalogTitle").textContent=filterLabels[filter];
+document.querySelectorAll(".gallery-filter").forEach(a=>a.classList.toggle("active",a.dataset.filter===filter));
+const demoGrid=document.getElementById("demoGrid");
+const visible=DEMOS.filter(x=>filter==="all"||x[0]===filter);
+demoGrid.innerHTML=visible.map((x,i)=>`<article class="demo-card" data-ai-context="Contoh karya ${x[1]}, kategori ${x[0]}, jalur ${x[5]}"><div class="demo-media"><img src="${x[2]}" alt="${x[1]}" loading="lazy"><span class="demo-index">DEMO ${String(i+1).padStart(2,"0")}</span><b class="demo-type">${x[0].toUpperCase()}</b></div><div class="demo-info"><h3>${x[1]}</h3><p>${x[3]} · contoh karya untuk ${x[5]}.</p><div class="demo-tags"><span>${x[4]}</span><span>${x[5]}</span></div></div></article>`).join("");
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4"></script>
+<script>
+(async function(){try{const db=window.supabase.createClient("https://auclznarnfooikmfmfvp.supabase.co","sb_publishable_gKb7R1NTjV_zSP5WemDo7Q_Em0Pp4t5");const {data,error}=await db.from("creator_gallery_items").select("id,title,description,media_type,preview_url,metadata,created_at").eq("status","published").order("created_at",{ascending:false}).limit(12);const live=document.getElementById("liveGrid");if(error||!data?.length){document.getElementById("liveStatus").textContent="Belum ada karya creator nyata yang dipublish. Contoh karya di atas tetap tersedia sebagai referensi UX.";return;}document.getElementById("liveStatus").textContent=data.length+" karya creator live di SANGGAR Workspace.";live.innerHTML=data.map(x=>`<a class="demo-card" href="work.html?id=${x.id}" style="text-decoration:none;color:inherit"><div class="demo-media">${x.preview_url?'<img src="'+x.preview_url+'" alt="'+(x.title||"Creator work").replace(/"/g,"&quot;")+'" loading="lazy">':'<span class="demo-index">WORK</span>'}</div><div class="demo-info"><h3>${x.title||"Creator work"}</h3><p>${x.description||"Published creator work"}</p></div></a>`).join("");}catch(e){document.getElementById("liveStatus").textContent="Demo Gallery aktif; koneksi karya live belum tersedia.";}})();
+</script><script src="companion.js?v=4" defer></script>
+</body></html>
