@@ -1,0 +1,44 @@
+name: SANGGAR Pages — Production
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Static quality tests
+        run: python tests/test_site.py
+      - name: Secret pattern scan
+        shell: bash
+        run: |
+          if grep -RInE '(sk-[A-Za-z0-9]{20,}|service_role|-----BEGIN (RSA|OPENSSH|EC|PRIVATE) KEY-----)' --exclude-dir=.git --exclude-dir=.github .; then exit 1; fi
+      - name: Validate required public assets
+        run: |
+          test -f index.html
+          test -f 404.html
+          test -f robots.txt
+          test -f sitemap.xml
+          test -f .well-known/security.txt
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
