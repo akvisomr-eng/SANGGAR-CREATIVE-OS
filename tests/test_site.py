@@ -33,6 +33,9 @@ assert "new-portfolio" in app
 assert "new-passport" in app
 assert "new-evidence" in app
 assert "run-assessment" in app
+assert "creative-marketplace-evaluator" in app
+assert "export-package" in app
+assert "2.57.4" in app
 assert "project_output" in app
 assert "needs_human_review" in app
 assert "position:sticky" in css
