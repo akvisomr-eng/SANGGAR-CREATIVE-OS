@@ -46,6 +46,9 @@ assert "creator_gallery_items" in app
 assert "portfolio_items" in app
 assert "passport_items" in app
 assert "2.57.4" in app
+assert "emailRedirectTo:PRODUCTION_APP_URL" in app
+assert "PRODUCTION_APP_URL=\"https://akvisomr-eng.github.io/SANGGAR-CREATIVE-OS/app.html\"" in app
+assert "history.replaceState" in app
 assert "project_output" in app
 assert "needs_human_review" in app
 assert "position:sticky" in css
