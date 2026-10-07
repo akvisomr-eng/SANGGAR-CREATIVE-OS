@@ -1,0 +1,19 @@
+name: SANGGAR CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  quality-security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Static integrity tests
+        run: python tests/test_site.py
+      - name: Secret pattern scan
+        shell: bash
+        run: |
+          if grep -RInE '(sk-[A-Za-z0-9]{20,}|service_role|-----BEGIN (RSA|OPENSSH|EC|PRIVATE) KEY-----|SUPABASE_SERVICE_ROLE_KEY)' --exclude-dir=.git .; then exit 1; fi
+      - name: Required security files
+        run: test -f robots.txt && test -f sitemap.xml && test -f .well-known/security.txt
