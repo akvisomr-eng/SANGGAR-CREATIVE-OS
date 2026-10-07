@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 720" role="img" aria-labelledby="title desc">
+<title id="title">SANGGAR Creative OS — creative intelligence visual</title>
+<desc id="desc">Futuristic creator surrounded by digital creative panels, mountains and glowing platform layers.</desc>
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#06111f"/><stop offset=".52" stop-color="#173f69"/><stop offset="1" stop-color="#e59b83"/></linearGradient>
+  <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#08b7ff"/><stop offset=".5" stop-color="#6d5cff"/><stop offset="1" stop-color="#ff4fd8"/></linearGradient>
+  <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffffff" stop-opacity=".18"/><stop offset="1" stop-color="#7ddcff" stop-opacity=".04"/></linearGradient>
+  <filter id="blur"><feGaussianBlur stdDeviation="35"/></filter>
+  <filter id="soft"><feGaussianBlur stdDeviation="10"/></filter>
+  <filter id="shadow"><feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="#000" flood-opacity=".45"/></filter>
+</defs>
+<rect width="900" height="720" rx="36" fill="url(#sky)"/>
+<circle cx="690" cy="190" r="150" fill="#ffb29b" opacity=".28" filter="url(#blur)"/>
+<circle cx="270" cy="250" r="170" fill="#197bff" opacity=".22" filter="url(#blur)"/>
+<path d="M0 530L180 330 290 450 430 275 610 465 760 335 900 500V720H0Z" fill="#081321" opacity=".9"/>
+<path d="M0 585L170 445 300 530 455 390 615 540 780 425 900 515V720H0Z" fill="#0b1725"/>
+<path d="M0 625C190 585 290 650 455 600S735 570 900 620V720H0Z" fill="#050b13"/>
+<g opacity=".7">
+ <circle cx="128" cy="112" r="2" fill="#fff"/><circle cx="180" cy="180" r="2" fill="#fff"/><circle cx="800" cy="110" r="2" fill="#fff"/><circle cx="735" cy="270" r="2" fill="#fff"/>
+</g>
+<!-- creator -->
+<g filter="url(#shadow)">
+ <path d="M290 700c5-120 35-195 90-245 40-37 90-49 137-30 69 27 102 101 112 275Z" fill="#07101b"/>
+ <path d="M380 418c-13-75 17-144 84-162 71-19 126 25 135 97 7 58-15 109-67 133-68 31-139 6-152-68Z" fill="#7f4f42"/>
+ <path d="M363 365c-16-83 14-157 94-177 79-19 144 35 142 112-2 31-9 55-25 78-18-37-38-55-66-67-37-16-87-7-145 54Z" fill="#08111c"/>
+ <path d="M535 342c40-4 69-29 80-62 2 44-8 78-37 103Z" fill="#07101a"/>
+ <path d="M430 405c32 27 83 32 120 0-9 46-29 70-61 70-32 0-51-25-59-70Z" fill="#6a3e36"/>
+</g>
+<!-- floating creative panels -->
+<g filter="url(#shadow)">
+ <rect x="48" y="188" width="230" height="145" rx="18" fill="url(#glass)" stroke="#8bdcff" stroke-opacity=".42"/>
+ <rect x="78" y="218" width="110" height="82" rx="12" fill="#1d5f8d" opacity=".7"/>
+ <path d="M78 287l42-42 27 24 22-30 19 48Z" fill="#9fe8ff" opacity=".75"/>
+ <text x="204" y="246" fill="#fff" font-family="Arial" font-size="13">VISION</text><text x="204" y="269" fill="#bfe8ff" font-family="Arial" font-size="11">Creative signal</text>
+ <rect x="620" y="300" width="220" height="142" rx="18" fill="url(#glass)" stroke="#f0b9ff" stroke-opacity=".42"/>
+ <circle cx="656" cy="342" r="17" fill="url(#glow)"/><text x="690" y="346" fill="#fff" font-family="Arial" font-size="14">AI ASSISTANT</text>
+ <text x="650" y="382" fill="#c9d5e5" font-family="Arial" font-size="12">Siap membantu karya Anda.</text>
+ <rect x="650" y="399" width="125" height="7" rx="4" fill="#ffffff" opacity=".2"/><rect x="650" y="399" width="92" height="7" rx="4" fill="url(#glow)"/>
+ <rect x="590" y="110" width="170" height="108" rx="16" fill="url(#glass)" stroke="#8bdcff" stroke-opacity=".36"/>
+ <path d="M615 184c30-34 44-45 67-28 18 13 29-11 54-21" fill="none" stroke="#76ddff" stroke-width="3"/><circle cx="616" cy="184" r="5" fill="#76ddff"/><circle cx="736" cy="135" r="5" fill="#ff68dc"/>
+</g>
+<!-- platform layers -->
+<g transform="translate(370 545)" filter="url(#shadow)">
+ <path d="M0 0 115-42 230 0 115 44Z" fill="url(#glow)" opacity=".82"/>
+ <path d="M0 0v34l115 45 115-45V0L115 44Z" fill="#0d2742" stroke="#5de0ff" stroke-opacity=".5"/>
+ <path d="M18 42 115 80l97-38" fill="none" stroke="#fff" stroke-opacity=".18"/>
+ <path d="M18 70 115 108l97-38" fill="none" stroke="#fff" stroke-opacity=".12"/>
+</g>
+<g transform="translate(725 515)">
+ <rect width="120" height="38" rx="19" fill="#08111c" stroke="#78dfff" stroke-opacity=".45"/>
+ <circle cx="21" cy="19" r="6" fill="#17c9ff"/><text x="36" y="24" fill="#dcecff" font-family="Arial" font-size="11">CREATIVE OS</text>
+</g>
+</svg>
