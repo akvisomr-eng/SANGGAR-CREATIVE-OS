@@ -23,6 +23,10 @@ assert "innerHTML" not in js
 app=(root/"app.html").read_text()
 assert "createClient" in app
 assert "SUPABASE_KEY" in app
+assert "creator_submission_packages" in app
+assert "creative_passports" in app
+assert "learning_enrollments" in app
+assert "portfolios" in app
 assert "position:sticky" in css
 for required in ["academy.html","gallery.html","journey.html","app.html","404.html","robots.txt","sitemap.xml",".well-known/security.txt"]:
     assert (root/required).exists(), f"missing required asset: {required}"
