@@ -18,7 +18,7 @@
 </section>
 <section class="gallery-path" aria-label="Creator flow"><span class="path-step">01 Learn</span><i class="path-arrow">→</i><span class="path-step">02 Create</span><i class="path-arrow">→</i><span class="path-step">03 Prove</span><i class="path-arrow">→</i><span class="path-step">04 Publish</span><i class="path-arrow">→</i><span class="path-step">05 Match</span><i class="path-arrow">→</i><span class="path-step">06 Work</span><i class="path-arrow">→</i><span class="path-step">07 Grow</span></section>
 <section class="gallery-catalog">
-<div class="catalog-head"><div><p class="eyebrow">EXPLORE CREATIVE WORK</p><h2 id="catalogTitle">25 contoh karya</h2><p id="catalogDescription">Contoh karya untuk memperlihatkan bagaimana SANGGAR mengelompokkan creator berdasarkan bentuk karya dan jalur komersialisasinya.</p></div><div class="gallery-filters"><a class="gallery-filter active" data-filter="all" href="gallery.html">All</a><a class="gallery-filter" data-filter="3d" href="gallery.html?category=3d">3D</a><a class="gallery-filter" data-filter="photo" href="gallery.html?category=photo">Photo</a><a class="gallery-filter" data-filter="design" href="gallery.html?category=design">Design</a><a class="gallery-filter" data-filter="motion" href="gallery.html?category=motion">Motion</a><a class="gallery-filter" data-filter="audio" href="gallery.html?category=audio">Audio</a></div></div>
+<div class="catalog-head"><div><p class="eyebrow">EXPLORE CREATIVE WORK</p><h2 id="catalogTitle">Karya pilihan</h2><p id="catalogDescription">Contoh karya untuk memperlihatkan bagaimana SANGGAR mengelompokkan creator berdasarkan bentuk karya dan jalur komersialisasinya.</p></div><div class="gallery-filters"><a class="gallery-filter active" data-filter="all" href="gallery.html">All</a><a class="gallery-filter" data-filter="3d" href="gallery.html?category=3d">3D</a><a class="gallery-filter" data-filter="photo" href="gallery.html?category=photo">Photo</a><a class="gallery-filter" data-filter="design" href="gallery.html?category=design">Design</a><a class="gallery-filter" data-filter="motion" href="gallery.html?category=motion">Motion</a><a class="gallery-filter" data-filter="audio" href="gallery.html?category=audio">Audio</a></div></div>
 <div id="demoGrid" class="gallery-grid-os"></div>
 <div class="live-zone"><p class="eyebrow">LIVE CREATOR WORKS</p><h3>Karya creator yang benar-benar dipublish</h3><p id="liveStatus">Menghubungkan Gallery dengan SANGGAR Workspace…</p><div id="liveGrid" class="gallery-grid-os" style="margin-top:20px"></div></div>
 </section>
@@ -53,7 +53,7 @@ const DEMOS=[
 ["audio","Cinematic Pulse","assets/demo/audio-4.svg","Music","Scoring","Film / Media"],
 ["audio","Creator Podcast","assets/demo/audio-5.svg","Audio","Podcast","Creator Business"]
 ];
-const filterLabels={all:"Contoh karya","3d":"Karya 3D","photo":"Karya Photo","design":"Karya Design","motion":"Karya Motion","audio":"Karya Audio"};
+const filterLabels={all:"Karya pilihan","3d":"Karya 3D","photo":"Karya Photo","design":"Karya Design","motion":"Karya Motion","audio":"Karya Audio"};
 const q=new URLSearchParams(location.search).get("category"), filter=["3d","photo","design","motion","audio"].includes(q)?q:"all";
 document.getElementById("catalogTitle").textContent=filterLabels[filter];
 document.querySelectorAll(".gallery-filter").forEach(a=>a.classList.toggle("active",a.dataset.filter===filter));
@@ -63,39 +63,39 @@ document.getElementById("catalogTitle").textContent=filterLabels[filter];
 document.querySelectorAll(".gallery-filter").forEach(a=>a.classList.toggle("active",a.dataset.filter===filter));
 const REALISTIC_IMAGES={
   3d:[
-    "https://loremflickr.com/1200/900/3d,render,blender?lock=301",
-    "https://loremflickr.com/1200/900/3d,product,render?lock=302",
-    "https://loremflickr.com/1200/900/3d,model,render?lock=303",
-    "https://loremflickr.com/1200/900/3d,architecture,render?lock=304",
-    "https://loremflickr.com/1200/900/3d,sculpture,render?lock=305"
+    "https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/3769847/pexels-photo-3769847.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/386236/pexels-photo-386236.jpeg?auto=compress&cs=tinysrgb&w=1200"
   ],
   photo:[
-    "https://loremflickr.com/1200/900/architecture,photography?lock=311",
-    "https://loremflickr.com/1200/900/street,photography,city?lock=312",
-    "https://loremflickr.com/1200/900/golden,hour,photography?lock=313",
-    "https://loremflickr.com/1200/900/night,market,photography?lock=314",
-    "https://loremflickr.com/1200/900/lifestyle,photography,workspace?lock=315"
+    "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/753325/pexels-photo-753325.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/1796730/pexels-photo-1796730.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=1200"
   ],
   design:[
-    "https://loremflickr.com/1200/900/graphic,design,branding?lock=321",
-    "https://loremflickr.com/1200/900/editorial,design,layout?lock=322",
-    "https://loremflickr.com/1200/900/poster,graphic,design?lock=323",
-    "https://loremflickr.com/1200/900/visual,identity,design?lock=324",
-    "https://loremflickr.com/1200/900/creative,campaign,design?lock=325"
+    "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/4348404/pexels-photo-4348404.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/6444/pencil-typography-black-design.jpg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1200"
   ],
   motion:[
-    "https://loremflickr.com/1200/900/light,trail,night?lock=331",
-    "https://loremflickr.com/1200/900/kinetic,typography,design?lock=332",
-    "https://loremflickr.com/1200/900/liquid,motion,abstract?lock=333",
-    "https://loremflickr.com/1200/900/neon,light,motion?lock=334",
-    "https://loremflickr.com/1200/900/3d,animation,render?lock=335"
+    "https://images.pexels.com/photos/1166643/pexels-photo-1166643.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/7130536/pexels-photo-7130536.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/1252890/pexels-photo-1252890.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/1699030/pexels-photo-1699030.jpeg?auto=compress&cs=tinysrgb&w=1200"
   ],
   audio:[
-    "https://loremflickr.com/1200/900/recording,studio,microphone?lock=341",
-    "https://loremflickr.com/1200/900/music,producer,studio?lock=342",
-    "https://loremflickr.com/1200/900/voice,microphone,podcast?lock=343",
-    "https://loremflickr.com/1200/900/cinematic,music,studio?lock=344",
-    "https://loremflickr.com/1200/900/podcast,creator,microphone?lock=345"
+    "https://images.pexels.com/photos/164829/pexels-photo-164829.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/63703/pexels-photo-63703.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/3777075/pexels-photo-3777075.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/4088012/pexels-photo-4088012.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/394565/pexels-photo-394565.jpeg?auto=compress&cs=tinysrgb&w=1200"
   ]
 };
 function demoImage(type,title,index){
