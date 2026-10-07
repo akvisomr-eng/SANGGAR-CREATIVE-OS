@@ -27,6 +27,10 @@ assert "creator_submission_packages" in app
 assert "creative_passports" in app
 assert "learning_enrollments" in app
 assert "portfolios" in app
+assert "evidence_records" in app
+assert "creative_asset_assessments" in app
+assert "new-portfolio" in app
+assert "new-passport" in app
 assert "position:sticky" in css
 for required in ["academy.html","gallery.html","journey.html","app.html","404.html","robots.txt","sitemap.xml",".well-known/security.txt"]:
     assert (root/required).exists(), f"missing required asset: {required}"
