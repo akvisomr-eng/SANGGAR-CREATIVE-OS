@@ -121,6 +121,11 @@ $("loginBtn").onclick=async()=>{const {error}=await sb.auth.signInWithPassword({
 $("logoutBtn").onclick=()=>sb.auth.signOut().then(()=>location.reload());
 $("refreshBtn").onclick=()=>load().catch(e=>note(e.message||String(e),true));
 sb.auth.onAuthStateChange((_event,session)=>{if(session){$("loginView").classList.add("hidden");$("appView").classList.remove("hidden")}else{location.reload()}});
+document.querySelectorAll(".nav a").forEach(a=>a.addEventListener("click",()=>showView(a.dataset.view)));
+$("bootstrapBtn").addEventListener("click",bootstrapAdmin);
+$("quickRefresh").addEventListener("click",()=>load().catch(e=>note(e.message||String(e),true)));
+const initial=location.hash.replace("#",""); if(initial&&document.getElementById(initial)) showView(initial);
+$("globalSearch").addEventListener("input",e=>{const q=e.target.value.toLowerCase().trim();document.querySelectorAll("#peopleTable tr,#moderationTable tr,#auditTable tr").forEach(row=>row.classList.toggle("view-hidden",q&&!row.textContent.toLowerCase().includes(q)))});
 start();
 </script>
 </body></html>
