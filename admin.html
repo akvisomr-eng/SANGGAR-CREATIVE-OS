@@ -27,7 +27,7 @@
 <aside class="side">
 <div class="brand">SANGGAR<small>ADMIN CONTROL CENTER</small></div>
 <nav class="nav">
-<a class="active" href="#overview">Overview</a><a href="#people">People & Identity</a><a href="#creative">Creative & Learning</a><a href="#ai">AI Operations</a><a href="#economy">Economy</a><a href="#governance">Governance</a>
+<a class="active" href="#overview">Overview</a><a href="#people">People & Identity</a><a href="#organizations">Organizations</a><a href="#creative">Creative & Learning</a><a href="#ai">AI Operations</a><a href="#economy">Economy</a><a href="#governance">Governance</a><a href="#system">System Health</a>
 </nav>
 <div class="footer">Governed · Audited · Evidence-based</div>
 </aside>
@@ -36,9 +36,11 @@
 <div id="notice" class="notice hidden"></div>
 <section id="overview"><div class="grid" id="metrics"></div></section>
 <section class="section" id="people"><div class="section-head"><h2>People & Identity</h2><span class="muted">Current authorized scope</span></div><div class="panels"><div class="card"><div class="label">Recent members</div><div id="members" class="list" style="margin-top:10px"></div></div><div class="card"><div class="label">Organizations</div><div id="orgs" class="list" style="margin-top:10px"></div></div></div></section>
+<section class="section" id="organizations"><div class="section-head"><h2>Organizations</h2><span class="muted">Tenant scope & platform structure</span></div><div class="card"><table class="table"><thead><tr><th>Organization</th><th>Type</th><th>Status</th></tr></thead><tbody id="orgTable"></tbody></table></div></section>
 <section class="section" id="creative"><div class="section-head"><h2>Creative & Learning</h2><span class="muted">Creator ecosystem health</span></div><div class="card"><table class="table"><thead><tr><th>Signal</th><th>Value</th><th>Meaning</th></tr></thead><tbody id="creativeTable"></tbody></table></div></section>
 <section class="section" id="ai"><div class="section-head"><h2>AI Operations</h2><span class="muted">Runs · tasks · approvals · reliability</span></div><div class="panels"><div class="card"><div class="label">Recent AI tasks</div><div id="aiTasks" class="list" style="margin-top:10px"></div></div><div class="card"><div class="label">Human approvals</div><div id="approvals" class="list" style="margin-top:10px"></div></div></div></section>
 <section class="section" id="economy"><div class="section-head"><h2>Economy</h2><span class="muted">Subscriptions · invoices · usage</span></div><div class="grid" id="economyGrid"></div></section>
+<section class="section" id="system"><div class="section-head"><h2>System Health</h2><span class="muted">Read-only control-plane signals</span></div><div class="grid" id="systemGrid"></div></section>
 <section class="section" id="governance"><div class="section-head"><h2>Governance</h2><span class="muted">Audit · risk · evolution</span></div><div class="panels"><div class="card"><div class="label">Operating insights</div><div id="insights" class="list" style="margin-top:10px"></div></div><div class="card"><div class="label">Evolution releases</div><div id="releases" class="list" style="margin-top:10px"></div></div></div></section>
 <div class="footer">SANGGAR Admin · Authorization enforced by Supabase RLS. Dashboard is read-oriented; high-risk actions remain governed by approval workflows.</div>
 </main></div>
@@ -81,6 +83,8 @@ async function load(){
  $("members").innerHTML=(memberRows||[]).map(x=>'<div class="row"><span>'+esc(x.user_id.slice(0,8))+'…</span><span class="status">'+esc(x.membership_status)+'</span></div>').join("")||'<div class="muted">Belum ada data.</div>';
  const {data:orgRows}=await sb.from("organizations").select("id,name,organization_type,status").in("id",scope.organizationIds).limit(8);
  $("orgs").innerHTML=(orgRows||[]).map(x=>'<div class="row"><span><b>'+esc(x.name)+'</b><br><span class="muted">'+esc(x.organization_type)+'</span></span><span class="status">'+esc(x.status)+'</span></div>').join("")||'<div class="muted">Belum ada data.</div>';
+ $("orgTable").innerHTML=(orgRows||[]).map(x=>'<tr><td><b>'+esc(x.name)+'</b></td><td>'+esc(x.organization_type)+'</td><td>'+esc(x.status)+'</td></tr>').join("")||'<tr><td colspan="3" class="muted">Belum ada organisasi.</td></tr>';
+ $("systemGrid").innerHTML=[["AI reliability signals",await count("ai_reliability_signals")],["Policy decisions",await count("ai_policy_decisions")],["Capability requests",await count("ai_capability_requests")],["Audit events",await count("ai_audit_events")],["Evolution projects",await count("evolution_projects")],["Evolution test runs",await count("evolution_test_runs")]].map(x=>'<div class="card"><div class="label">'+esc(x[0])+'</div><div class="value">'+(x[1]??"—")+'</div><div class="delta">Control-plane signal</div></div>').join("");
  $("creativeTable").innerHTML=[["Published creator works",gallery,"Public creator surface"],["Learning enrollments",enrollments,"Active learning demand"],["Evidence records",evidence,"Skill proof"],["Portfolios",portfolio,"Professional identity"],["Creative Passports",passports,"Portable trust"]].map(x=>'<tr><td>'+esc(x[0])+'</td><td><b>'+esc(x[1])+'</b></td><td class="muted">'+esc(x[2])+'</td></tr>').join("");
  const {data:taskRows}=await sb.from("ai_tasks").select("task_type,goal,status,priority,created_at").in("organization_id",scope.organizationIds).order("created_at",{ascending:false}).limit(7);
  $("aiTasks").innerHTML=(taskRows||[]).map(x=>'<div class="row"><span><b>'+esc(x.task_type)+'</b><br><span class="muted">'+esc((x.goal||"").slice(0,60))+'</span></span><span class="status">'+esc(x.status)+'</span></div>').join("")||'<div class="muted">Belum ada AI task.</div>';
