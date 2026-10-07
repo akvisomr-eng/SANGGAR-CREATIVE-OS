@@ -8,7 +8,7 @@ js=(root/"app.js").read_text()
 
 assert "<!doctype html>" in html.lower()
 assert 'data-sanggar-companion="public"' in html
-assert "companion.js?v=2" in html
+assert "companion.js?v=3" in html
 assert (root/"companion.js").exists()
 assert 'lang="id"' in html
 assert '<meta name="viewport"' in html
@@ -53,7 +53,7 @@ assert "emailRedirectTo:PRODUCTION_APP_URL" in app
 assert "PRODUCTION_APP_URL=\"https://akvisomr-eng.github.io/SANGGAR-CREATIVE-OS/app.html\"" in app
 assert "history.replaceState" in app
 assert 'data-sanggar-companion="workspace"' in app
-assert "companion.js?v=2" in app
+assert "companion.js?v=3" in app
 assert "project_output" in app
 assert "needs_human_review" in app
 assert "position:sticky" in css
