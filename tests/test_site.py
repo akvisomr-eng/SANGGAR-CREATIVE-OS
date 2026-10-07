@@ -8,7 +8,7 @@ js=(root/"app.js").read_text()
 
 assert "<!doctype html>" in html.lower()
 assert 'data-sanggar-companion="public"' in html
-assert "companion.js?v=3" in html
+assert "companion.js?v=4" in html
 assert (root/"companion.js").exists()
 assert 'lang="id"' in html
 assert '<meta name="viewport"' in html
@@ -53,7 +53,7 @@ assert "emailRedirectTo:PRODUCTION_APP_URL" in app
 assert "PRODUCTION_APP_URL=\"https://akvisomr-eng.github.io/SANGGAR-CREATIVE-OS/app.html\"" in app
 assert "history.replaceState" in app
 assert 'data-sanggar-companion="workspace"' in app
-assert "companion.js?v=3" in app
+assert "companion.js?v=4" in app
 assert "project_output" in app
 assert "needs_human_review" in app
 assert "position:sticky" in css
@@ -63,8 +63,24 @@ print("SANGGAR static quality checks: PASS")
 
 
 def test_gallery_categories_are_actionable():
-    html=(ROOT/"gallery.html").read_text(encoding="utf-8")
+    html=(root/"gallery.html").read_text(encoding="utf-8")
     for category in ["3d","photo","design","motion","audio"]:
         assert f"gallery.html?category={category}" in html
     assert "data-category=\"3d\"" in html
     assert "new URLSearchParams(location.search)" in html
+
+
+def test_gallery_demo_integrity():
+    gallery=(root/"gallery.html").read_text(encoding="utf-8")
+    assert "25 contoh karya" not in gallery
+    assert "All · 25" not in gallery
+    assert "3D · 5" not in gallery
+    assert "Photo · 5" not in gallery
+    assert "Design · 5" not in gallery
+    assert "Motion · 5" not in gallery
+    assert "Audio · 5" not in gallery
+    assert "loremflickr.com" not in gallery
+    assert "images.unsplash.com" in gallery
+    for category in ["3d","photo","design","motion","audio"]:
+        assert len(re.findall(rf'{category}:\[', gallery)) == 1
+    assert gallery.count("images.unsplash.com") >= 26
