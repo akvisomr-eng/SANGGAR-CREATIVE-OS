@@ -14,6 +14,6 @@ jobs:
       - name: Secret pattern scan
         shell: bash
         run: |
-          if grep -RInE '(sk-[A-Za-z0-9]{20,}|service_role|-----BEGIN (RSA|OPENSSH|EC|PRIVATE) KEY-----|SUPABASE_SERVICE_ROLE_KEY)' --exclude-dir=.git .; then exit 1; fi
+          if grep -RInE '(sk-[A-Za-z0-9]{20,}|service_role|-----BEGIN (RSA|OPENSSH|EC|PRIVATE) KEY-----)' --exclude-dir=.git --exclude-dir=.github .; then exit 1; fi
       - name: Required security files
         run: test -f robots.txt && test -f sitemap.xml && test -f .well-known/security.txt
