@@ -75,4 +75,4 @@ $("publish-work").addEventListener("click",async()=>{
  render((await db.auth.getSession()).data.session);
 });
 $("export-package").addEventListener("click",async()=>{const {data:{user}}=await db.auth.getUser();const {data:p}=await db.from("creator_submission_packages").select("id,title,status,content_type,metadata,rights_evidence,release_evidence,provenance,package_manifest,external_submission_url,created_at").eq("user_id",user.id).order("created_at",{ascending:false}).limit(1);if(!p?.length)return alert("Belum ada paket pengajuan.");const blob=new Blob([JSON.stringify(p[0],null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=(p[0].title||"sanggar-paket-pengajuan").replace(/[^a-z0-9-_]+/gi,"-").slice(0,80)+".json";a.click();URL.revokeObjectURL(url)});load();
-</script><script src="companion.js?v=2" defer></script></body></html>
+</script><script src="companion.js?v=3" defer></script></body></html>
