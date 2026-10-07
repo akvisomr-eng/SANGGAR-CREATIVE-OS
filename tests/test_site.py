@@ -60,3 +60,11 @@ assert "position:sticky" in css
 for required in ["academy.html","gallery.html","journey.html","app.html","404.html","robots.txt","sitemap.xml",".well-known/security.txt"]:
     assert (root/required).exists(), f"missing required asset: {required}"
 print("SANGGAR static quality checks: PASS")
+
+
+def test_gallery_categories_are_actionable():
+    html=(ROOT/"gallery.html").read_text(encoding="utf-8")
+    for category in ["3d","photo","design","motion","audio"]:
+        assert f"gallery.html?category={category}" in html
+    assert "data-category=\"3d\"" in html
+    assert "new URLSearchParams(location.search)" in html
