@@ -32,7 +32,7 @@
 <div class="footer">Governed · Audited · Evidence-based</div>
 </aside>
 <main class="main">
-<header class="top"><div><div class="eyebrow">OPERATING INTELLIGENCE</div><h1>Control Center</h1><div id="scope" class="muted">Loading organization scope…</div></div><div class="actions"><button id="refreshBtn" class="btn">Refresh</button><button id="logoutBtn" class="btn">Keluar</button></div></header>
+<header class="top"><div><div class="eyebrow">OPERATING INTELLIGENCE</div><h1>Control Center</h1><div id="scope" class="muted">Loading organization scope…</div><div id="lastRefresh" class="muted" style="font-size:11px;margin-top:4px"></div></div><div class="actions"><button id="refreshBtn" class="btn">Refresh</button><button id="logoutBtn" class="btn">Keluar</button></div></header>
 <div id="notice" class="notice hidden"></div>
 <section id="overview"><div class="grid" id="metrics"></div></section>
 <section class="section" id="people"><div class="section-head"><h2>People & Identity</h2><span class="muted">Profiles · memberships · roles</span></div><div class="card" style="margin-bottom:14px"><input id="peopleSearch" class="field input" style="width:100%;margin:0;background:#090c11;border:1px solid var(--line);color:var(--text);padding:11px;border-radius:9px" placeholder="Cari nama, username, user ID, atau status…"></div><div class="card"><table class="table"><thead><tr><th>Person</th><th>Organization</th><th>Role</th><th>Membership</th><th>Joined</th></tr></thead><tbody id="peopleTable"></tbody></table></div><div class="panels" style="margin-top:14px"><div class="card"><div class="label">Recent members</div><div id="members" class="list" style="margin-top:10px"></div></div><div class="card"><div class="label">Organizations</div><div id="orgs" class="list" style="margin-top:10px"></div></div></div></section>
@@ -66,6 +66,7 @@ async function roleScope(){
 }
 async function count(table,extra=""){let q=sb.from(table).select("*",{count:"exact",head:true});if(extra)q=extra(q);const r=await q;return r.error?null:r.count??0}
 async function load(){
+ $("lastRefresh").textContent="Memuat control-plane…";
  const scope=await roleScope(); if(!scope){note("Akun ini belum memiliki akses admin. Hubungi administrator platform.",true);return}
  $("scope").textContent=scope.roles.map(r=>r.name||r.code).join(" · ")+" · "+scope.organizationIds.length+" organisasi";
  const [members,orgs,gallery,enrollments,evidence,portfolio,passports,aiTasks,aiRuns,approvals,invoices,subs,usage,insights,releases,auditCount]=await Promise.all([
@@ -111,6 +112,7 @@ async function load(){
  $("insights").innerHTML=(ins||[]).map(x=>'<div class="row"><span><b>'+esc(x.title)+'</b><br><span class="muted">confidence '+esc(x.confidence)+'</span></span><span class="status '+(x.severity==="critical"||x.severity==="high"?"danger":x.severity==="medium"?"warn":"")+'">'+esc(x.severity||x.status)+'</span></div>').join("")||'<div class="muted">Belum ada insight.</div>';
  const {data:auditRows}=await sb.from("audit_logs").select("action,resource_type,outcome,actor_user_id,occurred_at").in("organization_id",scope.organizationIds).order("occurred_at",{ascending:false}).limit(12);
  $("auditTable").innerHTML=(auditRows||[]).map(x=>'<tr><td><b>'+esc(x.action)+'</b></td><td>'+esc(x.resource_type||"—")+'</td><td><span class="status '+(x.outcome==="failure"||x.outcome==="denied"?"danger":"")+'">'+esc(x.outcome||"—")+'</span></td><td>'+esc((x.actor_user_id||"system").slice(0,10))+'…</td><td class="muted">'+esc(x.occurred_at?new Date(x.occurred_at).toLocaleString("id-ID"):"—")+'</td></tr>').join("")||'<tr><td colspan="5" class="muted">Belum ada audit activity.</td></tr>';
+ $("lastRefresh").textContent="Terakhir diperbarui: "+new Date().toLocaleString("id-ID");
  const {data:rel}=await sb.from("evolution_releases").select("version_label,environment,status,released_at").order("created_at",{ascending:false}).limit(7);
  $("releases").innerHTML=(rel||[]).map(x=>'<div class="row"><span><b>'+esc(x.version_label)+'</b><br><span class="muted">'+esc(x.environment)+'</span></span><span class="status">'+esc(x.status)+'</span></div>').join("")||'<div class="muted">Belum ada release.</div>';
 }
@@ -118,7 +120,7 @@ async function start(){const {data:{session}}=await sb.auth.getSession();if(sess
 $("loginBtn").onclick=async()=>{const {error}=await sb.auth.signInWithPassword({email:$("email").value,password:$("password").value});if(error){$("loginNotice").textContent=error.message;$("loginNotice").classList.remove("hidden")}else start()};
 $("logoutBtn").onclick=()=>sb.auth.signOut().then(()=>location.reload());
 $("refreshBtn").onclick=()=>load().catch(e=>note(e.message||String(e),true));
-sb.auth.onAuthStateChange((_event,session)=>{if(session){$("loginView").classList.add("hidden");$("appView").classList.remove("hidden")}});
+sb.auth.onAuthStateChange((_event,session)=>{if(session){$("loginView").classList.add("hidden");$("appView").classList.remove("hidden")}else{location.reload()}});
 start();
 </script>
 </body></html>
