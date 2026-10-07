@@ -21,13 +21,13 @@ function makeCompanion(){
  const node=(tag,cls,text,attrs={})=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;Object.entries(attrs).forEach(([k,v])=>n.setAttribute(k,v));return n};
  const head=node("div","ai-companion-head");head.append(node("div","ai-avatar","S",{"aria-hidden":"true"}));const identity=node("div");identity.append(node("strong",null,"SANGGAR AI Companion"),node("small",null,"Context-aware guide"));head.append(identity);const minimize=node("button","ai-minimize","−",{"type":"button","aria-label":"Minimalkan AI Companion"});head.append(minimize);
  const cb=node("div","ai-companion-body");const label=node("span","ai-context-label","SIAP MEMBIMBING");const title=node("h3",null,"Halo, saya pendamping SANGGAR.");const intro=node("p",null,"Arahkan mouse ke bagian mana pun di halaman ini. Saya akan menjelaskan fungsinya dan menyarankan langkah berikutnya.");const nextBox=node("div","ai-next");nextBox.append(node("b",null,"Langkah berikutnya"),node("span",null,"Mulai dari tujuan Anda, lalu saya bantu menemukan jalurnya."));cb.append(label,title,intro,nextBox);
- const actions=node("div","ai-companion-actions");const listen=node("button","ai-action ai-listen","🔊 Dengarkan",{"type":"button"});const stop=node("button","ai-action ai-stop","■ Hentikan",{"type":"button"});stop.hidden=true;const help=node("button","ai-action ai-help","✦ Pandu saya",{"type":"button"});actions.append(listen,stop,help);const status=node("div","ai-status","",{"aria-live":"polite"});root.append(head,cb,actions,status);
+ const actions=node("div","ai-companion-actions");const listen=node("button","ai-action ai-listen","🔊 Dengarkan",{"type":"button"});const stop=node("button","ai-action ai-stop","■ Hentikan",{"type":"button"});stop.hidden=true;const auto=node("button","ai-action ai-auto-voice","◉ Voice otomatis",{"type":"button","aria-pressed":"false"});const help=node("button","ai-action ai-help","✦ Pandu saya",{"type":"button"});actions.append(listen,stop,auto,help);const status=node("div","ai-status","",{"aria-live":"polite"});root.append(head,cb,actions,status);
  document.body.appendChild(root);
 
  const body=root.querySelector(".ai-companion-body"),status=root.querySelector(".ai-status");
  const title=root.querySelector("h3"),p=root.querySelector(".ai-companion-body p"),next=root.querySelector(".ai-next span"),label=root.querySelector(".ai-context-label");
  let current={title:"SANGGAR AI Companion",text:"Halo, saya pendamping SANGGAR.",next:"Mulai dari tujuan Anda.",speak:"Halo, saya pendamping SANGGAR."};
- let lastTarget=null,hoverTimer=null,idleTimer=null;
+ let lastTarget=null,hoverTimer=null,idleTimer=null,autoVoice=false;
 
  function knowledgeFor(el){
    if(!el)return current;
@@ -42,7 +42,7 @@ function makeCompanion(){
    current=item;label.textContent="KONTEKS AKTIF";title.textContent=item.title;p.textContent=item.text;next.textContent=item.next;
    status.textContent="AI Companion memahami konteks: "+item.title;
    root.classList.add("is-active");
-   if(voice)speak(item.speak||item.text);
+   if(voice||autoVoice)speak(item.speak||item.text);
  }
  function speak(text){
    if(!("speechSynthesis" in window)) {status.textContent="Voice tidak tersedia di browser ini.";return}
@@ -62,6 +62,7 @@ function makeCompanion(){
  document.addEventListener("mouseover",e=>{watch(e.target.closest("a,button,[data-ai-context],h1,h2,h3,article,.domain-card,.floating-chip,.ai-card"));resetIdle()},{passive:true});
  document.addEventListener("focusin",e=>watch(e.target.closest("a,button,[data-ai-context],h1,h2,h3,article")), {passive:true});
  root.querySelector(".ai-listen").addEventListener("click",()=>speak(current.speak||current.text));
+ root.querySelector(".ai-auto-voice").addEventListener("click",()=>{autoVoice=!autoVoice;auto.setAttribute("aria-pressed",String(autoVoice));auto.textContent=autoVoice?"● Voice otomatis ON":"◉ Voice otomatis";status.textContent=autoVoice?"Konteks baru akan dibacakan otomatis.":"Voice otomatis dimatikan.";if(!autoVoice)window.speechSynthesis?.cancel()});
  root.querySelector(".ai-stop").addEventListener("click",()=>{window.speechSynthesis?.cancel();root.classList.remove("is-speaking")});
  root.querySelector(".ai-help").addEventListener("click",()=>{const item={title:"Pandu saya",text:"Pilih tujuan Anda. Untuk belajar kemampuan baru, gunakan Academy. Untuk membangun jalur dari tujuan ke penghasilan, gunakan Creator Journey. Untuk mengelola output dan bukti, gunakan Workspace.",next:"Rekomendasi awal: Creator Journey → Learning → Project → Evidence → Portfolio → Marketplace Match.",speak:"Pilih tujuan Anda. Untuk belajar gunakan Academy. Untuk jalur dari tujuan ke penghasilan gunakan Creator Journey. Untuk mengelola karya gunakan Workspace."};render(item,true)});
  root.querySelector(".ai-minimize").addEventListener("click",()=>root.classList.toggle("is-collapsed"));
