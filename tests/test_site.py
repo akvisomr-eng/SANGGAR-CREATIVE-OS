@@ -35,6 +35,10 @@ assert "new-evidence" in app
 assert "run-assessment" in app
 assert "creative-marketplace-evaluator" in app
 assert "export-package" in app
+assert "publish-work" in app
+assert "creator_gallery_items" in app
+assert "portfolio_items" in app
+assert "passport_items" in app
 assert "2.57.4" in app
 assert "project_output" in app
 assert "needs_human_review" in app
