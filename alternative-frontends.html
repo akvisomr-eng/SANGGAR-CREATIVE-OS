@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="SANGGAR Open Web Intelligence — privacy-friendly alternatives and open-source discovery">
+<title>SANGGAR — Open Web Intelligence</title>
+<link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="sanggar-design-system.css">
+<style>
+.sg-service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.sg-service{display:flex;flex-direction:column;gap:10px}
+.sg-service h3{margin:0}.sg-service p{margin:0;color:var(--sg-muted);line-height:1.55}
+.sg-service .sg-cluster{margin-top:auto}
+</style>
+</head>
+<body>
+<header class="topbar">
+<div class="brand"><strong>SANGGAR</strong><span>CREATIVE OS</span></div>
+<nav aria-label="Navigasi"><a href="app.html">Workspace</a><a href="journey.html">Journey</a><a href="gallery.html">Gallery</a><a href="admin-control.html">Admin</a><a href="automation-center.html">Automation</a><a href="alternative-frontends.html" aria-current="page">Open Web</a></nav>
+</header>
+<main class="container" style="max-width:1180px;margin:auto;padding:28px 18px 60px">
+<section class="sg-card sg-ai-card">
+<span class="sg-badge sg-badge-info">OPEN WEB INTELLIGENCE</span>
+<h1 style="margin:10px 0 6px">Privacy-friendly Web Gateway</h1>
+<p style="color:var(--sg-muted);max-width:820px">SANGGAR menggunakan katalog open-source alternative front-ends sebagai intelligence layer: bukan menyalin proyek pihak ketiga, tetapi membantu creator menemukan cara yang lebih ringan, terbuka dan privacy-aware untuk mengakses web.</p>
+</section>
+<section style="margin-top:22px">
+<div class="sg-cluster" style="justify-content:space-between;margin-bottom:14px"><h2 style="margin:0">Capability Map</h2><label class="sg-field" style="min-width:240px"><span class="sg-sr-only">Cari layanan</span><input id="search" class="sg-input" placeholder="Cari YouTube, Reddit, Search..."></label></div>
+<div id="grid" class="sg-service-grid"></div>
+</section>
+<section class="sg-card" style="margin-top:22px">
+<h2 style="margin-top:0">Cara SANGGAR mengintegrasikannya</h2>
+<div class="sg-responsive-grid">
+<div><span class="sg-badge">01 DISCOVER</span><p>Identifikasi layanan dan alternatif open-source yang relevan.</p></div>
+<div><span class="sg-badge">02 EVALUATE</span><p>Nilai status pemeliharaan, instance, privacy, license, risiko dan kompatibilitas.</p></div>
+<div><span class="sg-badge">03 ROUTE</span><p>Gunakan connector/server-side gateway; browser tidak memegang secret pihak ketiga.</p></div>
+<div><span class="sg-badge">04 LEARN</span><p>Resource yang bernilai dapat masuk Academy, project reference dan skill graph.</p></div>
+</div>
+<div class="sg-alert sg-alert-warning" style="margin-top:16px"><strong>Catatan:</strong><span>Katalog sumber dapat berisi proyek yang tidak lagi aktif, instance publik yang berubah, atau layanan dengan ketentuan berbeda. SANGGAR harus melakukan health check dan policy check sebelum mengarahkan pengguna.</span></div>
+</section>
+</main>
+<script>
+const services=[
+{name:"Video alternatif",cat:"YouTube",items:["Invidious","Piped","NewPipe","LibreTube","FreeTube"],use:"video discovery, learning media, privacy-aware playback"},
+{name:"Music alternatif",cat:"Music",items:["Beatbump","ytmdesktop","Spotube","Cider"],use:"music discovery and creator research"},
+{name:"Social alternatif",cat:"Social",items:["Nitter","Teddit","Libreddit","Tusky","Fedilab"],use:"social research with less tracking exposure"},
+{name:"Private Search",cat:"Search",items:["SearXNG","Searx","Whoogle","LibreX"],use:"research and web discovery"},
+{name:"Translation",cat:"Language",items:["Lingva Translate","SimplyTranslate","Crow Translate"],use:"multilingual learning and creator communication"},
+{name:"Media & Archive",cat:"Media",items:["Rimgo","ArchiveBox","Wikiless","Librarian"],use:"reference collection and research"},
+{name:"Open Collaboration",cat:"Tools",items:["HedgeDoc","Etherpad","Gitea","PrivateBin","Snapdrop"],use:"creator collaboration, notes and secure sharing"},
+{name:"Redirect & Normalize",cat:"Privacy",items:["LibRedirect","Farside","UntrackMe","Redirector"],use:"privacy-aware URL normalization and routing"}
+];
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const render=filter=>{const f=filter.toLowerCase();document.getElementById('grid').innerHTML=services.filter(x=>(x.name+' '+x.cat+' '+x.items.join(' ')+' '+x.use).toLowerCase().includes(f)).map(x=>'<article class="sg-card sg-service"><div class="sg-cluster"><span class="sg-badge sg-badge-info">'+esc(x.cat)+'</span></div><h3>'+esc(x.name)+'</h3><p>'+esc(x.use)+'</p><p><strong>Examples:</strong> '+esc(x.items.join(' · '))+'</p><div class="sg-cluster"><span class="sg-badge">discovery only</span></div></article>').join('')||'<div class="sg-empty"><strong>Tidak ditemukan</strong>Coba kata kunci lain.</div>'};
+document.getElementById('search').addEventListener('input',e=>render(e.target.value));render('');
+</script>
+</body></html>
