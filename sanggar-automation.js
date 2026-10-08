@@ -44,6 +44,18 @@ const workflows=[
 {id:"ai-learning-path",name:"AI Learning Path",cat:"Academy",desc:"Creator goal + level → 101/201/301 curriculum → projects → evidence → assessment.",trigger:"learning.goal",action:"adaptive curriculum"},
 {id:"ai-research-radar",name:"AI Research Radar",cat:"Research",desc:"Research signals → topic classification → relevance → summary → update knowledge graph.",trigger:"research.signal",action:"research digest"},
 {id:"ai-interview-prep",name:"AI Role & Interview Prep",cat:"Academy",desc:"Target role → skills → question bank → mock interview → evaluation → gap analysis.",trigger:"career.goal",action:"adaptive preparation"}
+,{id:"api-capability-registry",name:"API Capability Registry",cat:"Integration",desc:"Katalog API → capability, auth, rate limit, cost, data sensitivity dan health untuk dipilih AI.",trigger:"api.discover",action:"capability ranking"},
+{id:"api-connector-gateway",name:"API Connector Gateway",cat:"Integration",desc:"Menstandarkan pemanggilan API eksternal dengan timeout, retry, rate limit, secret isolation dan audit.",trigger:"integration.request",action:"safe API call"},
+{id:"learning-podcast-hub",name:"Learning Podcast Hub",cat:"Academy",desc:"Podcast → topic, transcript/summary, skill mapping dan rekomendasi episode untuk Creator Journey.",trigger:"podcast.ingested",action:"learning resource"},
+{id:"mobile-capability-intelligence",name:"Android Capability Intelligence",cat:"Mobile",desc:"Profil perangkat → camera, media, network, storage, sensors, permissions dan capability adapters.",trigger:"device.profiled",action:"capability map"},
+{id:"mobile-quality-loop",name:"Mobile Quality Loop",cat:"Mobile",desc:"Crash, performance, device context dan feedback → triage → priority → engineering action.",trigger:"mobile.signal",action:"quality insight"},
+{id:"indie-business-launchpad",name:"Indie Business Launchpad",cat:"Economy",desc:"Ide → niche → validation → MVP → pricing → launch → acquisition → revenue loop.",trigger:"business.idea",action:"launch roadmap"},
+{id:"creator-microbusiness",name:"Creator Microbusiness Engine",cat:"Economy",desc:"Skill + evidence + audience → product/service → offer → pricing → distribution → recurring revenue.",trigger:"creator.business.goal",action:"business plan"},
+{id:"market-validation-loop",name:"Market Validation Loop",cat:"Strategy",desc:"Problem → audience → demand signal → experiment → result → pivot/scale recommendation.",trigger:"market.test",action:"validation decision"},
+{id:"ai-visual-prompt-studio",name:"AI Visual Prompt Studio",cat:"Creative AI",desc:"Brief → subject, style, composition, lighting, typography, aspect ratio dan constraints → reusable visual prompt.",trigger:"visual.brief",action:"prompt blueprint"},
+{id:"visual-variation-lab",name:"Visual Variation Lab",cat:"Creative AI",desc:"Satu creative direction → controlled variations → compare → select → evidence/provenance.",trigger:"visual.generate",action:"variation set"},
+{id:"creative-prompt-library",name:"Creative Prompt Library",cat:"Creative AI",desc:"Prompt yang berhasil → tag use case/style/subject → versioning → evaluation → reusable template.",trigger:"prompt.saved",action:"prompt asset"}
+
 ];
 
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
