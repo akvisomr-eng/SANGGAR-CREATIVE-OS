@@ -49,7 +49,8 @@ assert "creator_gallery_items" in app
 assert 'id="works"' in app
 assert "source_kind:"creator_asset"" in app
 assert "asset_id:asset.id" in app
-assert "No need to enter preview URL manually" not in app
+assert "preview_url:pub.publicUrl" in app
+assert "prompt(\"Preview URL" not in app
 assert "portfolio_items" in app
 assert "passport_items" in app
 assert "2.57.4" in app
@@ -85,6 +86,14 @@ def test_gallery_demo_integrity():
     assert "Audio · 5" not in gallery
     assert "loremflickr.com" not in gallery
     assert "images.unsplash.com" in gallery
+    work=(root/"work.html").read_text(encoding="utf-8")
+    assert "Creator Work Control Center" in work
+    assert "creative_asset_assessments" in work
+    assert "creator_submission_packages" in work
+    assert "passport_items" in work
+    assert "portfolio_id" in work
+    assert "companion.js?v=4" in work
+    assert "source_reference_id" in work
     for category in ["3d","photo","design","motion","audio"]:
         assert len(re.findall(rf'{category}:\[', gallery)) == 1
     assert gallery.count("images.unsplash.com") >= 26
