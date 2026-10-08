@@ -87,7 +87,34 @@ function demoImage(type,title,index){
 }
 const demoGrid=document.getElementById("demoGrid");
 demoGrid.innerHTML=visible.map((x,i)=>`<article class="demo-card" data-ai-context="Contoh karya ${x[1]}, kategori ${x[0]}, jalur ${x[5]}"><div class="demo-media"><img src="${demoImage(x[0],x[1],i+1)}" alt="${x[1]}" loading="eager" referrerpolicy="no-referrer"><span class="demo-index">DEMO ${String(i+1).padStart(2,"0")}</span><b class="demo-type">${x[0].toUpperCase()}</b></div><div class="demo-info"><h3>${x[1]}</h3><p>${x[3]} · contoh karya untuk ${x[5]}.</p><div class="demo-tags"><span>${x[4]}</span><span>${x[5]}</span></div></div></article>`).join("");</script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4"></script>
+<script type="module">
+(async function(){
+const stage=document.getElementById("gallery3dStage"),canvas=document.getElementById("gallery3dCanvas"),viewport=document.getElementById("gallery3dViewport");
+if(!stage||!canvas||!viewport||new URLSearchParams(location.search).get("category")!=="3d") return;
+stage.classList.add("is-active");
+try{
+const THREE=await import("https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js");
+const scene=new THREE.Scene();scene.background=new THREE.Color(0x050911);
+const camera=new THREE.PerspectiveCamera(38,1,.1,100);camera.position.set(4.8,2.8,6.4);
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+const root=new THREE.Group();scene.add(root);
+root.add(new THREE.Mesh(new THREE.IcosahedronGeometry(1.35,3),new THREE.MeshPhysicalMaterial({color:0x7667ff,metalness:.38,roughness:.18,clearcoat:.8})));
+const ringMat=new THREE.MeshStandardMaterial({color:0x20c7ff,metalness:.72,roughness:.2,emissive:0x063d59,emissiveIntensity:1.2});
+[1.75,2.2].forEach((r,i)=>{const ring=new THREE.Mesh(new THREE.TorusGeometry(r,.028,14,128),ringMat);ring.rotation.x=i?Math.PI/2:Math.PI/3;root.add(ring)});
+const base=new THREE.Mesh(new THREE.CylinderGeometry(1.45,1.8,.24,64),new THREE.MeshStandardMaterial({color:0x101827,metalness:.75,roughness:.23}));base.position.y=-1.55;root.add(base);
+const grid=new THREE.GridHelper(10,20,0x25425d,0x152536);grid.position.y=-1.68;scene.add(grid);
+scene.add(new THREE.HemisphereLight(0xb8e7ff,0x070b13,2.2));const key=new THREE.DirectionalLight(0xffffff,3.4);key.position.set(4,6,5);scene.add(key);
+let down=false,lastX=0,lastY=0,rx=.14,ry=.38,zoom=6.4;
+function resize(){const w=viewport.clientWidth,h=Math.max(380,viewport.clientHeight);renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()}resize();addEventListener("resize",resize);
+viewport.addEventListener("pointerdown",e=>{down=true;lastX=e.clientX;lastY=e.clientY;viewport.setPointerCapture(e.pointerId)});
+viewport.addEventListener("pointermove",e=>{if(!down)return;ry+=(e.clientX-lastX)*.009;rx=Math.max(-1.1,Math.min(1.1,rx+(e.clientY-lastY)*.009));lastX=e.clientX;lastY=e.clientY});
+viewport.addEventListener("pointerup",()=>down=false);viewport.addEventListener("pointercancel",()=>down=false);
+viewport.addEventListener("wheel",e=>{e.preventDefault();zoom=Math.max(4.2,Math.min(9,zoom+e.deltaY*.004))},{passive:false});
+document.getElementById("gallery3dReset")?.addEventListener("click",()=>{rx=.14;ry=.38;zoom=6.4});
+(function tick(){requestAnimationFrame(tick);root.rotation.x=rx;root.rotation.y=ry;camera.position.z=zoom;camera.lookAt(0,-.25,0);renderer.render(scene,camera)})();
+}catch(e){stage.classList.remove("is-active");console.warn("3D gallery preview unavailable",e)}
+})();
+</script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4"></script>
 <script>
 (async function(){try{const db=window.supabase.createClient("https://auclznarnfooikmfmfvp.supabase.co","sb_publishable_gKb7R1NTjV_zSP5WemDo7Q_Em0Pp4t5");const {data,error}=await db.from("creator_gallery_items").select("id,title,description,media_type,preview_url,metadata,created_at").eq("status","published").order("created_at",{ascending:false}).limit(12);const live=document.getElementById("liveGrid");if(error||!data?.length){document.getElementById("liveStatus").textContent="Belum ada karya creator yang dipublish. Area ini akan otomatis menampilkan karya nyata dari Workspace setelah creator melakukan publish.";return;}document.getElementById("liveStatus").textContent=data.length+" karya creator live di SANGGAR Workspace.";live.innerHTML=data.map(x=>`<a class="demo-card" href="work.html?id=${x.id}" style="text-decoration:none;color:inherit"><div class="demo-media">${x.preview_url?'<img src="'+x.preview_url+'" alt="'+(x.title||"Creator work").replace(/"/g,"&quot;")+'" loading="lazy">':'<span class="demo-index">WORK</span>'}</div><div class="demo-info"><h3>${x.title||"Creator work"}</h3><p>${x.description||"Published creator work"}</p></div></a>`).join("");}catch(e){document.getElementById("liveStatus").textContent="Demo Gallery aktif; koneksi karya live belum tersedia.";}})();
 </script><script src="companion.js?v=4" defer></script>
