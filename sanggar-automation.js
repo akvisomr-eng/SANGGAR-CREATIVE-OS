@@ -55,6 +55,10 @@ const workflows=[
 {id:"ai-visual-prompt-studio",name:"AI Visual Prompt Studio",cat:"Creative AI",desc:"Brief → subject, style, composition, lighting, typography, aspect ratio dan constraints → reusable visual prompt.",trigger:"visual.brief",action:"prompt blueprint"},
 {id:"visual-variation-lab",name:"Visual Variation Lab",cat:"Creative AI",desc:"Satu creative direction → controlled variations → compare → select → evidence/provenance.",trigger:"visual.generate",action:"variation set"},
 {id:"creative-prompt-library",name:"Creative Prompt Library",cat:"Creative AI",desc:"Prompt yang berhasil → tag use case/style/subject → versioning → evaluation → reusable template.",trigger:"prompt.saved",action:"prompt asset"}
+,{id:"privacy-web-gateway",name:"Privacy Web Gateway",cat:"Open Web Intelligence",desc:"Memetakan layanan populer ke alternatif open-source/privacy-friendly tanpa menyalin atau meng-host proyek pihak ketiga secara otomatis.",trigger:"web.service.request",action:"ranked alternatives"},
+{id:"alternative-instance-router",name:"Alternative Instance Router",cat:"Open Web Intelligence",desc:"Memilih endpoint alternatif berdasarkan service, availability, latency, privacy posture, license dan policy SANGGAR.",trigger:"web.route.request",action:"safe routing"},
+{id:"open-web-learning",name:"Open Web Learning Discovery",cat:"Academy",desc:"Menemukan front-end, client dan resource open-source yang relevan lalu mengubahnya menjadi sumber belajar, project reference atau skill signal.",trigger:"learning.discovery",action:"resource + skill"},
+{id:"privacy-link-normalizer",name:"Privacy Link Normalizer",cat:"Open Web Intelligence",desc:"Membersihkan tracking parameters dan mengarahkan URL ke destination yang diizinkan melalui server-side policy.",trigger:"link.received",action:"normalized destination"}
 
 ];
 
