@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="SANGGAR Creative OS — Automation Center">
+<title>SANGGAR — Automation Center</title>
+<link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="sanggar-design-system.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><strong>SANGGAR</strong><span>CREATIVE OS</span></div>
+  <nav aria-label="Navigasi"><a href="app.html">Workspace</a><a href="journey.html">Journey</a><a href="gallery.html">Gallery</a><a href="admin-control.html">Admin</a><a href="automation-center.html" aria-current="page">Automation</a></nav>
+</header>
+<main class="container" style="max-width:1180px;margin:auto;padding:28px 18px 60px">
+  <section class="sg-card sg-ai-card">
+    <div class="sg-cluster" style="justify-content:space-between">
+      <div><span class="sg-badge sg-badge-info">SANGGAR AUTOMATION LAYER</span><h1 style="margin:10px 0 6px">Automation Center</h1><p style="color:var(--sg-muted);max-width:760px;margin:0">Mesin orkestrasi untuk menghubungkan Creator Journey, Academy, Portfolio, Evidence, Marketplace dan AI tanpa membuat pengguna harus mengelola proses teknis.</p></div>
+      <div class="sg-kpi"><strong id="activeCount">0</strong><span>workflow siap dipakai</span></div>
+    </div>
+  </section>
+  <section style="margin-top:22px">
+    <div class="sg-cluster" style="justify-content:space-between;margin-bottom:14px"><h2 style="margin:0">Workflow SANGGAR</h2><label class="sg-field" style="min-width:240px"><span class="sg-sr-only">Cari workflow</span><input id="search" class="sg-input" placeholder="Cari automation..."></label></div>
+    <div id="grid" class="sg-responsive-grid"></div>
+  </section>
+  <section class="sg-card" style="margin-top:22px">
+    <h2 style="margin-top:0">Arsitektur</h2>
+    <div class="sg-responsive-grid">
+      <div><span class="sg-badge">01 EVENT</span><p>Creator signup, upload karya, progress belajar, submission, order, pesan.</p></div>
+      <div><span class="sg-badge">02 ORCHESTRATE</span><p>Validasi → klasifikasi AI → enrichment → approval → action.</p></div>
+      <div><span class="sg-badge">03 MEMORY</span><p>Supabase menyimpan state, audit trail, preference dan hasil workflow.</p></div>
+      <div><span class="sg-badge">04 OUTPUT</span><p>Notifikasi, rekomendasi, portfolio update, report dan marketplace action.</p></div>
+    </div>
+    <div class="sg-alert sg-alert-info" style="margin-top:16px"><strong>Human-in-the-loop:</strong><span>aksi berisiko seperti publikasi, pengiriman pesan, pembayaran, moderasi dan perubahan data sensitif tetap membutuhkan persetujuan.</span></div>
+  </section>
+</main>
+<script src="sanggar-automation.js"></script>
+</body></html>
