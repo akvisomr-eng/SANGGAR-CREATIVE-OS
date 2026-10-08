@@ -44,8 +44,12 @@ assert "new-evidence" in app
 assert "run-assessment" in app
 assert "creative-marketplace-evaluator" in app
 assert "export-package" in app
-assert "publish-work" in app
+assert "publish-work" not in app
 assert "creator_gallery_items" in app
+assert 'id="works"' in app
+assert "source_kind:"creator_asset"" in app
+assert "asset_id:asset.id" in app
+assert "No need to enter preview URL manually" not in app
 assert "portfolio_items" in app
 assert "passport_items" in app
 assert "2.57.4" in app
