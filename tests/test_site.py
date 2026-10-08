@@ -47,7 +47,7 @@ assert "export-package" in app
 assert "publish-work" not in app
 assert "creator_gallery_items" in app
 assert 'id="works"' in app
-assert "source_kind:"creator_asset"" in app
+assert 'source_kind:"creator_asset"' in app
 assert "asset_id:asset.id" in app
 assert "preview_url:pub.publicUrl" in app
 assert "prompt(\"Preview URL" not in app
