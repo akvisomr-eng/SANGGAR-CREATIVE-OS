@@ -114,13 +114,24 @@ $("upload-work").addEventListener("click",async()=>{
     source_reference_id:asset.id,status:"submitted",
     provenance:{created_in:"sanggar_workspace",asset_id:asset.id,gallery_item_id:g.id,storage_path:path}
   }).select().single();
-  if(ee)return alert("Karya sudah tampil di Gallery, tetapi evidence otomatis gagal dibuat: "+ee.message);
-  if(port?.[0])await db.from("portfolio_items").insert({
-    portfolio_id:port[0].id,evidence_id:evidence.id,title,description,position:0,visibility:"private"
-  });
-  if(pass?.[0])await db.from("passport_items").insert({
-    passport_id:pass[0].id,item_type:"portfolio_item",source_id:g.id,position:0,visibility:"private"
-  });
+  if(ee){
+    await db.from("creator_gallery_items").delete().eq("id",g.id).eq("user_id",user.id);
+    await db.from("creator_assets").delete().eq("id",asset.id).eq("user_id",user.id);
+    await db.storage.from("creator-gallery").remove([path]);
+    return alert("Evidence gagal dibuat, sehingga upload dibatalkan dan file dibersihkan: "+ee.message);
+  }
+  if(port?.[0]){
+    const {error:pe}=await db.from("portfolio_items").insert({
+      portfolio_id:port[0].id,evidence_id:evidence.id,title,description,position:0,visibility:"private"
+    });
+    if(pe)console.warn("Portfolio item tidak dibuat:",pe.message);
+  }
+  if(pass?.[0]){
+    const {error:pa}=await db.from("passport_items").insert({
+      passport_id:pass[0].id,item_type:"portfolio_item",source_id:g.id,position:0,visibility:"private"
+    });
+    if(pa)console.warn("Passport item tidak dibuat:",pa.message);
+  }
   alert("Karya siap: Asset → Evidence → Gallery → Portfolio/Passport (jika tersedia). Tidak perlu memasukkan URL preview manual.");
   render((await db.auth.getSession()).data.session);
  };
