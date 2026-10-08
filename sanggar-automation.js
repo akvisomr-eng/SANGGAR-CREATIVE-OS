@@ -33,6 +33,17 @@ const workflows=[
 {id:"asset-provenance",name:"Asset Provenance",cat:"Creative Assets",desc:"Mencatat source, creator, license, project usage dan attribution agar output dapat ditelusuri.",trigger:"asset.attached",action:"provenance record"},
 {id:"creative-library",name:"Creative Library",cat:"Creative Assets",desc:"Mengelola asset milik creator, saved references dan project collections tanpa mengklaim kepemilikan asset pihak ketiga.",trigger:"asset.saved",action:"library update"},
 {id:"ai-asset-curator",name:"AI Asset Curator",cat:"AI",desc:"Menerjemahkan creative brief menjadi kebutuhan asset lalu meranking kandidat berdasarkan style, quality dan rights.",trigger:"brief.created",action:"asset recommendations"}
+,{id:"ai-use-copilot",name:"AI Use Copilot",cat:"GenAI Intelligence",desc:"Intent creator → pilih tool → prompt/context → execute → evaluasi → simpan hasil dan preference.",trigger:"ai.request",action:"guided AI workflow"},
+{id:"ai-system-builder",name:"AI System Builder",cat:"GenAI Intelligence",desc:"Use case → architecture → model/RAG/agent/tools → evaluation → production checklist.",trigger:"ai.system.request",action:"system blueprint"},
+{id:"rag-pipeline",name:"RAG Knowledge Pipeline",cat:"GenAI Intelligence",desc:"Knowledge source → chunk → index → retrieve → grounded answer → citation/evaluation.",trigger:"knowledge.updated",action:"retrieval pipeline"},
+{id:"agent-orchestration",name:"Agent Orchestration",cat:"GenAI Intelligence",desc:"Goal → planning → tools → memory → sub-agents → result → verification.",trigger:"agent.task",action:"multi-step execution"},
+{id:"ai-evaluation",name:"AI Evaluation Loop",cat:"GenAI Intelligence",desc:"Prompt/model/agent output → quality, relevance, safety and latency checks → score → improvement.",trigger:"ai.output",action:"eval + feedback"},
+{id:"ai-observability",name:"AI Observability",cat:"GenAI Intelligence",desc:"Track model usage, latency, errors, cost, tool calls, retrieval quality and user feedback.",trigger:"ai.call",action:"telemetry + insight"},
+{id:"ai-safety-gate",name:"AI Safety & Security Gate",cat:"Governance",desc:"Input/output/tool action → risk classification → policy → block, transform, approve or execute.",trigger:"ai.action",action:"policy decision"},
+{id:"multimodal-ai",name:"Multimodal Intelligence",cat:"GenAI Intelligence",desc:"Text, image, audio and document input → unified context → analysis → structured output.",trigger:"multimodal.input",action:"context fusion"},
+{id:"ai-learning-path",name:"AI Learning Path",cat:"Academy",desc:"Creator goal + level → 101/201/301 curriculum → projects → evidence → assessment.",trigger:"learning.goal",action:"adaptive curriculum"},
+{id:"ai-research-radar",name:"AI Research Radar",cat:"Research",desc:"Research signals → topic classification → relevance → summary → update knowledge graph.",trigger:"research.signal",action:"research digest"},
+{id:"ai-interview-prep",name:"AI Role & Interview Prep",cat:"Academy",desc:"Target role → skills → question bank → mock interview → evaluation → gap analysis.",trigger:"career.goal",action:"adaptive preparation"}
 ];
 
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
