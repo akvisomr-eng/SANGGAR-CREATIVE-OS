@@ -1,5 +1,6 @@
 /* SANGGAR Automation Catalog
    Original workflow specifications inspired by common n8n automation patterns.
+   Big-data capabilities are translated into SANGGAR-native workflow specifications.
    No third-party workflow JSON is copied into this project.
 */
 const workflows=[
@@ -18,7 +19,17 @@ const workflows=[
 {id:"social-pulse",name:"Social Pulse",cat:"Growth",desc:"Sinyal sosial → trend extraction → creator opportunity insights.",trigger:"scheduled",action:"trend report"},
 {id:"analytics-digest",name:"Analytics Digest",cat:"Admin",desc:"Data produk → KPI → anomaly hints → ringkasan operasional.",trigger:"scheduled",action:"admin digest"},
 {id:"human-approval",name:"Human Approval Gate",cat:"Governance",desc:"Menahan aksi sensitif sampai moderator/admin memberi persetujuan.",trigger:"risk.detected",action:"approval queue"},
-{id:"audit-governance",name:"Audit & Governance",cat:"Governance",desc:"Mencatat actor, event, decision, outcome dan timestamp untuk traceability.",trigger:"mutation",action:"audit log"}
+{id:"audit-governance",name:"Audit & Governance",cat:"Governance",desc:"Mencatat actor, event, decision, outcome dan timestamp untuk traceability.",trigger:"mutation",action:"audit log"},
+
+{id:"data-ingestion",name:"Data Ingestion Gateway",cat:"Data Intelligence",desc:"Mengumpulkan event, evidence, marketplace, academy dan operational data ke canonical event model.",trigger:"data.received",action:"normalize + queue"},
+{id:"data-quality",name:"Data Quality Guard",cat:"Data Intelligence",desc:"Memeriksa completeness, validity, uniqueness, consistency dan freshness sebelum data dipakai AI.",trigger:"data.ingested",action:"quality score + quarantine"},
+{id:"data-lineage",name:"Data Lineage",cat:"Data Intelligence",desc:"Melacak asal data, transformasi, consumer dan dampak perubahan untuk audit dan debugging.",trigger:"data.mutated",action:"lineage graph"},
+{id:"semantic-data-search",name:"Semantic Data Search",cat:"AI",desc:"Menggabungkan metadata terstruktur dengan semantic retrieval untuk mencari creator, evidence, knowledge dan opportunity.",trigger:"search",action:"hybrid ranking"},
+{id:"analytics-intelligence",name:"Analytics Intelligence",cat:"Data Intelligence",desc:"Mengubah event produk menjadi KPI, cohort, funnel, retention, revenue dan operational insights.",trigger:"scheduled",action:"metrics + insights"},
+{id:"realtime-signals",name:"Realtime Signal Engine",cat:"Data Intelligence",desc:"Memproses sinyal perubahan secara near-real-time untuk opportunity, notification, anomaly dan monitoring.",trigger:"stream.event",action:"signal + action"},
+{id:"recommendation-engine",name:"Recommendation Engine",cat:"AI",desc:"Menggunakan skill, evidence, behavior, goals dan market signals untuk menghasilkan next-best-action.",trigger:"profile.changed",action:"ranked recommendations"},
+{id:"data-governance",name:"Data Governance Guard",cat:"Governance",desc:"Menerapkan ownership, retention, access policy, sensitive-data controls dan audit sebelum data dipakai.",trigger:"data.access",action:"policy decision"},
+{id:"data-anomaly",name:"Data Anomaly Detector",cat:"Data Intelligence",desc:"Mendeteksi lonjakan, penurunan, duplikasi atau pola tidak wajar pada KPI dan workflow.",trigger:"metric.updated",action:"alert + investigation"}
 ];
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const render=filter=>{const data=workflows.filter(w=>(w.name+' '+w.cat+' '+w.desc).toLowerCase().includes(filter.toLowerCase()));document.getElementById('activeCount').textContent=data.length;document.getElementById('grid').innerHTML=data.map(w=>`<article class="sg-card sg-card-compact sg-card-interactive sg-stack"><div class="sg-cluster" style="justify-content:space-between"><span class="sg-badge sg-badge-info">${esc(w.cat)}</span><span class="sg-badge">${esc(w.trigger)}</span></div><h3 style="margin:2px 0">${esc(w.name)}</h3><p style="color:var(--sg-muted);margin:0;line-height:1.55">${esc(w.desc)}</p><div class="sg-cluster" style="margin-top:auto"><span class="sg-badge">${esc(w.action)}</span><button class="sg-button sg-button-secondary sg-button-sm" data-id="${esc(w.id)}">Detail</button></div></article>`).join('')||'<div class="sg-empty" style="grid-column:1/-1"><strong>Workflow tidak ditemukan</strong>Coba kata kunci lain.</div>'};
