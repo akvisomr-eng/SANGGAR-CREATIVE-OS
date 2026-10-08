@@ -1,4 +1,4 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="SANGGAR Workspace — learning, Creator Journey, portfolio, Creative Passport dan submission package."><meta name="robots" content="noindex,nofollow"><title>SANGGAR Workspace</title><link rel="stylesheet" href="styles.css"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4"></script></head><body data-sanggar-companion="workspace"><header class="top"><a class="brand" href="index.html">SANGGAR<span>OS</span></a><nav><a href="academy.html">Academy</a><a href="gallery.html">Gallery</a><button class="button small" id="signout" hidden>Keluar</button></nav></header><main><section class="hero workspace-hero"><p class="eyebrow">SANGGAR WORKSPACE</p><h1>Bangun tujuan menjadi <strong>hasil.</strong></h1><p class="lead">Satu workspace untuk journey, learning, portfolio, Creative Passport dan persiapan marketplace.</p><div id="auth" class="auth-card"><h2>Masuk ke SANGGAR</h2><p class="muted">Gunakan email dan password.</p><form id="auth-form"><label>Email<input id="email" type="email" required autocomplete="email"></label><label>Password<input id="password" type="password" minlength="6" required autocomplete="current-password"></label><div class="actions"><button class="button" type="submit">Masuk</button><button class="ghost" id="signup" type="button">Buat akun</button></div><p id="auth-msg" class="muted" role="status"></p></form></div><div id="workspace" hidden><div class="workspace-toolbar"><span id="user-label"></span><button class="button" id="new-journey">+ Creator Journey</button><button class="ghost" id="new-portfolio">+ Portfolio</button><button class="ghost" id="new-passport">+ Passport</button><button class="ghost" id="new-evidence">+ Evidence</button><button class="ghost" id="run-assessment">Assess Asset</button><button class="ghost" id="export-package">Ekspor Paket</button><button class="ghost" id="upload-work">↑ Upload Karya</button><button class="ghost" id="publish-work">Tampilkan Karya</button></div><div class="grid"><article><b>LEARNING</b><h3>Learning Progress</h3><p id="learning-stat">Memuat…</p><a class="ghost" href="academy.html">Buka Academy →</a></article><article><b>PORTFOLIO</b><h3>Portfolio</h3><p id="portfolio-stat">Memuat…</p><a class="ghost" href="gallery.html">Buka Gallery →</a></article><article><b>PASSPORT</b><h3>Creative Passport</h3><p id="passport-stat">Memuat…</p></article></div><section class="section" style="padding-left:0;padding-right:0"><p class="eyebrow">EVIDENCE & WORKS</p><div id="evidence" class="grid"></div><p class="eyebrow" style="margin-top:40px">CREATOR JOURNEYS</p><div id="journeys" class="grid"></div></section><section class="section" style="padding-left:0;padding-right:0"><p class="eyebrow">MARKETPLACE INTELLIGENCE</p><div id="matches" class="grid"></div><p class="eyebrow" style="margin-top:40px">SUBMISSION PACKAGES</p><div id="packages" class="grid"></div></section></div></section></main><footer><span>© SANGGAR CREATIVE OS</span><span>Identity → Data → Workflow → Intelligence → Economy</span></footer><script>
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="SANGGAR Workspace — learning, Creator Journey, portfolio, Creative Passport dan submission package."><meta name="robots" content="noindex,nofollow"><title>SANGGAR Workspace</title><link rel="stylesheet" href="styles.css"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4"></script></head><body data-sanggar-companion="workspace"><header class="top"><a class="brand" href="index.html">SANGGAR<span>OS</span></a><nav><a href="academy.html">Academy</a><a href="gallery.html">Gallery</a><button class="button small" id="signout" hidden>Keluar</button></nav></header><main><section class="hero workspace-hero"><p class="eyebrow">SANGGAR WORKSPACE</p><h1>Bangun tujuan menjadi <strong>hasil.</strong></h1><p class="lead">Satu workspace untuk journey, learning, portfolio, Creative Passport dan persiapan marketplace.</p><div id="auth" class="auth-card"><h2>Masuk ke SANGGAR</h2><p class="muted">Gunakan email dan password.</p><form id="auth-form"><label>Email<input id="email" type="email" required autocomplete="email"></label><label>Password<input id="password" type="password" minlength="6" required autocomplete="current-password"></label><div class="actions"><button class="button" type="submit">Masuk</button><button class="ghost" id="signup" type="button">Buat akun</button></div><p id="auth-msg" class="muted" role="status"></p></form></div><div id="workspace" hidden><div class="workspace-toolbar"><span id="user-label"></span><button class="button" id="new-journey">+ Creator Journey</button><button class="ghost" id="new-portfolio">+ Portfolio</button><button class="ghost" id="new-passport">+ Passport</button><button class="ghost" id="new-evidence">+ Evidence</button><button class="ghost" id="run-assessment">Assess Asset</button><button class="ghost" id="export-package">Ekspor Paket</button><button class="ghost" id="upload-work">↑ Upload Karya</button></div><div class="grid"><article><b>LEARNING</b><h3>Learning Progress</h3><p id="learning-stat">Memuat…</p><a class="ghost" href="academy.html">Buka Academy →</a></article><article><b>PORTFOLIO</b><h3>Portfolio</h3><p id="portfolio-stat">Memuat…</p><a class="ghost" href="gallery.html">Buka Gallery →</a></article><article><b>PASSPORT</b><h3>Creative Passport</h3><p id="passport-stat">Memuat…</p></article></div><section class="section" style="padding-left:0;padding-right:0"><p class="eyebrow">EVIDENCE & WORKS</p><div id="evidence" class="grid"></div><p class="eyebrow" style="margin-top:40px">KARYA SAYA</p><div id="works" class="grid"></div><p class="eyebrow" style="margin-top:40px">CREATOR JOURNEYS</p><div id="journeys" class="grid"></div></section><section class="section" style="padding-left:0;padding-right:0"><p class="eyebrow">MARKETPLACE INTELLIGENCE</p><div id="matches" class="grid"></div><p class="eyebrow" style="margin-top:40px">SUBMISSION PACKAGES</p><div id="packages" class="grid"></div></section></div></section></main><footer><span>© SANGGAR CREATIVE OS</span><span>Identity → Data → Workflow → Intelligence → Economy</span></footer><script>
 const SUPABASE_URL="https://auclznarnfooikmfmfvp.supabase.co",SUPABASE_KEY="sb_publishable_gKb7R1NTjV_zSP5WemDo7Q_Em0Pp4t5",PRODUCTION_APP_URL="https://akvisomr-eng.github.io/SANGGAR-CREATIVE-OS/app.html",db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY),$=id=>document.getElementById(id);
 const escapeHtml=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]));
 async function render(session){if(!session){$("auth").hidden=false;$("workspace").hidden=true;$("signout").hidden=true;return}$("auth").hidden=true;$("workspace").hidden=false;$("signout").hidden=false;$("user-label").textContent=session.user.email||"SANGGAR ID";
@@ -7,47 +7,71 @@ db.from("creator_journeys").select("id,goal_text,status,current_stage,started_at
 db.from("learning_enrollments").select("id,status,progress").eq("user_id",session.user.id),
 db.from("portfolios").select("id,status,visibility").eq("user_id",session.user.id),
 db.from("creative_passports").select("id,display_name,visibility").eq("user_id",session.user.id),
-db.from("creator_submission_packages").select("id,title,status,content_type,created_at").eq("user_id",session.user.id).order("created_at",{ascending:false}),db.from("evidence_records").select("id,title,status,evidence_type,description,created_at").eq("user_id",session.user.id).order("created_at",{ascending:false}),db.from("creator_gallery_items").select("id,title,status,media_type,portfolio_id").eq("user_id",session.user.id).order("created_at",{ascending:false}),db.from("creative_asset_assessments").select("id,assessment_status,sellability_score,quality_score,legal_risk_score,market_fit_score,assessed_at").eq("user_id",session.user.id).order("assessed_at",{ascending:false}),db.from("creator_submission_packages").select("id,title,status,content_type,created_at").eq("user_id",session.user.id).order("created_at",{ascending:false})
+db.from("creator_submission_packages").select("id,title,status,content_type,created_at").eq("user_id",session.user.id).order("created_at",{ascending:false}),db.from("evidence_records").select("id,title,status,evidence_type,description,created_at").eq("user_id",session.user.id).order("created_at",{ascending:false}),db.from("creator_gallery_items").select("id,title,status,media_type,portfolio_id,asset_id,preview_url,metadata,created_at").eq("user_id",session.user.id).order("created_at",{ascending:false}),db.from("creative_asset_assessments").select("id,assessment_status,sellability_score,quality_score,legal_risk_score,market_fit_score,assessed_at").eq("user_id",session.user.id).order("assessed_at",{ascending:false}),db.from("creator_submission_packages").select("id,title,status,content_type,created_at").eq("user_id",session.user.id).order("created_at",{ascending:false})
 ]);
 $("learning-stat").textContent=l.error?"Belum tersedia":l.data.length+" enrollment";
 $("portfolio-stat").textContent=p.error?"Belum tersedia":p.data.length+" portfolio";
 $("passport-stat").textContent=pass.error?"Belum tersedia":pass.data.length+" passport";
+$("works").innerHTML=gallery.data?.length?gallery.data.map(x=>{
+ const category=escapeHtml(x.metadata?.category||x.media_type||"creative").toUpperCase();
+ const status=escapeHtml(x.status||"draft").toUpperCase();
+ const href="work.html?id="+encodeURIComponent(x.id);
+ return "<article><b>"+category+" · "+status+"</b><h3>"+escapeHtml(x.title||"Untitled work")+"</h3><p>"+escapeHtml(x.metadata?.original_file_name||x.media_type||"Creator work")+"</p><div class='actions'><a class='ghost' href='"+href+"'>Detail →</a><button class='ghost assess-work' data-work-id='"+escapeHtml(x.id)+"'>Assess</button></div></article>";
+}).join(""):"<article><b>READY</b><h3>Belum ada karya</h3><p>Upload satu karya untuk membangun Asset → Evidence → Gallery → Passport.</p></article>";
+document.querySelectorAll(".assess-work").forEach(btn=>btn.addEventListener("click",async()=>{
+ const work=(gallery.data||[]).find(x=>x.id===btn.dataset.workId); const {data:{user}}=await db.auth.getUser(); await runMarketplaceAssessment(user,work);
+}));
 $("journeys").innerHTML=j.data?.length?j.data.map(x=>"<article><b>"+escapeHtml(x.status.toUpperCase())+"</b><h3>"+escapeHtml(x.goal_text)+"</h3><p>Stage: "+escapeHtml(x.current_stage)+"</p></article>").join(""):"<article><b>READY</b><h3>Belum ada journey</h3><p>Buat tujuan pertama Anda.</p></article>";
 $("evidence").innerHTML=evid.data?.length?evid.data.map(x=>"<article><b>"+escapeHtml(x.status.toUpperCase())+"</b><h3>"+escapeHtml(x.title)+"</h3><p>"+escapeHtml(x.evidence_type)+"</p></article>").join(""):"<article><b>READY</b><h3>Belum ada evidence</h3><p>Evidence dari project dan learning akan tampil di sini.</p></article>";$("matches").innerHTML=assess.data?.length?assess.data.map(x=>"<article><b>"+escapeHtml(x.assessment_status.toUpperCase())+"</b><h3>Sellability "+escapeHtml(x.sellability_score??"—")+"/100</h3><p>Quality "+escapeHtml(x.quality_score??"—")+" · Legal risk "+escapeHtml(x.legal_risk_score??"—")+" · Market fit "+escapeHtml(x.market_fit_score??"—")+"</p></article>").join(""):"<article><b>READY</b><h3>Belum ada assessment</h3><p>Lakukan pemeriksaan sebelum pengajuan setelah karya siap.</p></article>";$("packages").innerHTML=pkg.data?.length?pkg.data.map(x=>"<article><b>"+escapeHtml(x.status.toUpperCase())+"</b><h3>"+escapeHtml(x.title||"Submission Package")+"</h3><p>"+escapeHtml(x.content_type||"Creative asset")+"</p></article>").join(""):"<article><b>READY</b><h3>Belum ada paket pengajuan</h3><p>Paket pengajuan akan muncul setelah karya dinilai.</p></article>";
 }
-async function runMarketplaceAssessment(user,e){
-  const content_type=prompt("Jenis asset (image/video/audio/3d/document/mixed)?","image")||"image";
-  const attributesText=prompt("Metadata attributes JSON? Contoh: {\"ai_generated\":false,\"model_release\":true,\"property_release\":false}","{}")||"{}";
-  let attributes={}; try{attributes=JSON.parse(attributesText)}catch(_){return alert("JSON attributes tidak valid.")};
+async function runMarketplaceAssessment(user,work){
+  if(!work?.id)return alert("Belum ada karya yang dapat dinilai.");
+  const content_type=work.media_type||work.metadata?.category||"image";
+  const attributes=work.metadata?.attributes||{
+    ai_generated:false,
+    model_release:false,
+    property_release:false,
+    source:"creator_workspace"
+  };
   const {data:fn,error:fnError}=await db.functions.invoke("creative-marketplace-evaluator",{body:{content_type,attributes}});
   if(fnError)return alert(fnError.message);
   const results=fn?.results||[];
-  if(!results.length)return alert("Belum ada marketplace aktif yang cocok untuk content type ini.");
+  if(!results.length)return alert("Belum ada marketplace aktif yang cocok untuk karya ini.");
   const best=results[0];
+  const assetId=work.asset_id||null;
+  if(!assetId)return alert("Karya ini belum memiliki asset record. Upload ulang melalui Upload Karya.");
   const {data:assessment,error:aError}=await db.from("creative_asset_assessments").insert({
-    user_id:user.id,asset_id:e.id,assessment_status:best.eligibility_status==="eligible"?"ready":best.eligibility_status==="conditional"?"needs_improvement":"needs_human_review",
+    user_id:user.id,asset_id:assetId,assessment_status:best.eligibility_status==="eligible"?"ready":best.eligibility_status==="conditional"?"needs_improvement":"needs_human_review",
     sellability_score:best.match_score,quality_score:null,legal_risk_score:null,market_fit_score:best.match_score,
-    provenance:{source:"marketplace_evaluator",evidence_id:e.id,content_type},
+    provenance:{source:"marketplace_evaluator",gallery_item_id:work.id,content_type},
     findings:{top_platform:best.platform,results},
     recommendations:{blockers:best.blockers,requirements:best.requirements}
   }).select().single();
   if(aError)return alert(aError.message);
-  const matchRows=results.map(x=>({assessment_id:assessment.id,platform_id:null,match_score:x.match_score,eligibility_status:x.eligibility_status,blockers:x.blockers,requirements:x.requirements,evaluated_at:new Date().toISOString()}));
   const platformKeys=results.map(x=>x.platform?.key).filter(Boolean);
   const {data:platforms}=await db.from("creative_platforms").select("id,platform_key").in("platform_key",platformKeys);
   const ids=new Map((platforms||[]).map(x=>[x.platform_key,x.id]));
-  matchRows.forEach((x,i)=>x.platform_id=ids.get(results[i].platform.key));
-  const validMatches=matchRows.filter(x=>x.platform_id);
+  const validMatches=results.map(x=>({
+    assessment_id:assessment.id,platform_id:ids.get(x.platform?.key)||null,match_score:x.match_score,
+    eligibility_status:x.eligibility_status,blockers:x.blockers,requirements:x.requirements,evaluated_at:new Date().toISOString()
+  })).filter(x=>x.platform_id);
   if(validMatches.length)await db.from("creative_platform_matches").insert(validMatches);
-  const packageTitle=e.title+" — "+best.platform.name;
-  const manifest={generated_at:new Date().toISOString(),evaluator_version:fn.evaluator_version,disclaimer:fn.disclaimer,asset:{evidence_id:e.id,title:e.title,content_type},platform:best.platform,eligibility:best.eligibility_status,match_score:best.match_score,blockers:best.blockers,requirements:best.requirements,metadata:attributes};
+  const packageTitle=(work.title||"Karya")+" — "+best.platform.name;
+  const manifest={
+    generated_at:new Date().toISOString(),evaluator_version:fn.evaluator_version,disclaimer:fn.disclaimer,
+    asset:{gallery_item_id:work.id,asset_id:assetId,title:work.title,content_type},
+    platform:best.platform,eligibility:best.eligibility_status,match_score:best.match_score,
+    blockers:best.blockers,requirements:best.requirements,metadata:attributes
+  };
   const {error:pError}=await db.from("creator_submission_packages").insert({
-    user_id:user.id,assessment_id:assessment.id,platform_id:ids.get(best.platform.key)||null,status:best.eligibility_status==="ineligible"?"draft":"ready",
-    content_type,title:packageTitle,metadata:{content_type,attributes},rights_evidence:{status:"creator_attestation_required"},release_evidence:{status:"verify_before_submission"},
-    provenance:{evidence_id:e.id,assessment_id:assessment.id},package_manifest:manifest,external_submission_url:best.platform.contributor_url||best.platform.website_url
+    user_id:user.id,assessment_id:assessment.id,platform_id:ids.get(best.platform.key)||null,
+    status:best.eligibility_status==="ineligible"?"draft":"ready",content_type,title:packageTitle,
+    metadata:{content_type,attributes,gallery_item_id:work.id},rights_evidence:{status:"creator_attestation_required"},
+    release_evidence:{status:"verify_before_submission"},provenance:{gallery_item_id:work.id,asset_id:assetId,assessment_id:assessment.id},
+    package_manifest:manifest,external_submission_url:best.platform.contributor_url||best.platform.website_url
   });
   if(pError)alert("Assessment berhasil, tetapi package gagal dibuat: "+pError.message);
-  else alert("Assessment + marketplace matches + submission package berhasil dibuat untuk "+best.platform.name+".");
+  else alert("Karya dinilai. Marketplace matches dan submission package sudah dibuat.");
   render((await db.auth.getSession()).data.session);
 }
 async function load(){const {data:{session}}=await db.auth.getSession();await render(session);if(window.location.hash.includes("access_token=")||window.location.hash.includes("refresh_token=")||window.location.hash.includes("type=signup"))history.replaceState(null,document.title,window.location.pathname+window.location.search);db.auth.onAuthStateChange((_e,s)=>render(s))}
@@ -55,49 +79,51 @@ $("auth-form").addEventListener("submit",async e=>{e.preventDefault();$("auth-ms
 $("signup").addEventListener("click",async()=>{const {error}=await db.auth.signUp({email:$("email").value,password:$("password").value,options:{emailRedirectTo:PRODUCTION_APP_URL}});$("auth-msg").textContent=error?error.message:"Akun dibuat. Jika confirmation aktif, cek email."});
 $("signout").addEventListener("click",()=>db.auth.signOut());
 $("new-journey").addEventListener("click",async()=>{const goal=prompt("Apa tujuan kreatif/karier Anda?");if(!goal)return;const {data:{user}}=await db.auth.getUser();const key=goal.toLowerCase().replace(/[^a-z0-9]+/g,"_").slice(0,60)||"creator_goal";const {error}=await db.from("creator_journeys").insert({user_id:user.id,goal_key:key,goal_text:goal,current_stage:"goal"});if(error)alert(error.message);else render((await db.auth.getSession()).data.session)});
-$("new-portfolio").addEventListener("click",async()=>{const title=prompt("Nama portfolio?");if(!title)return;const {data:{user}}=await db.auth.getUser();const slug=title.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,70);const {error}=await db.from("portfolios").insert({user_id:user.id,title,slug,visibility:"private",status:"draft"});if(error)alert(error.message);else render((await db.auth.getSession()).data.session)});$("new-passport").addEventListener("click",async()=>{const display_name=prompt("Nama yang tampil di Creative Passport?");if(!display_name)return;const {data:{user}}=await db.auth.getUser();const {error}=await db.from("creative_passports").insert({user_id:user.id,display_name,visibility:"private"});if(error)alert(error.message);else render((await db.auth.getSession()).data.session)});$("new-evidence").addEventListener("click",async()=>{const title=prompt("Judul evidence?");if(!title)return;const description=prompt("Deskripsi evidence?")||"";const {data:{user}}=await db.auth.getUser();const {error}=await db.from("evidence_records").insert({user_id:user.id,title,description,evidence_type:"project_output",source_kind:"creator_workspace",status:"submitted",provenance:{created_in:"sanggar_workspace"}});if(error)alert(error.message);else render((await db.auth.getSession()).data.session)});$("run-assessment").addEventListener("click",async()=>{const {data:{user}}=await db.auth.getUser();const {data:ev}=await db.from("evidence_records").select("id,title,description").eq("user_id",user.id).order("created_at",{ascending:false}).limit(1);if(!ev?.length)return alert("Buat evidence terlebih dahulu.");await runMarketplaceAssessment(user,ev[0]);});
+$("new-portfolio").addEventListener("click",async()=>{const title=prompt("Nama portfolio?");if(!title)return;const {data:{user}}=await db.auth.getUser();const slug=title.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,70);const {error}=await db.from("portfolios").insert({user_id:user.id,title,slug,visibility:"private",status:"draft"});if(error)alert(error.message);else render((await db.auth.getSession()).data.session)});$("new-passport").addEventListener("click",async()=>{const display_name=prompt("Nama yang tampil di Creative Passport?");if(!display_name)return;const {data:{user}}=await db.auth.getUser();const {error}=await db.from("creative_passports").insert({user_id:user.id,display_name,visibility:"private"});if(error)alert(error.message);else render((await db.auth.getSession()).data.session)});$("new-evidence").addEventListener("click",async()=>{const title=prompt("Judul evidence?");if(!title)return;const description=prompt("Deskripsi evidence?")||"";const {data:{user}}=await db.auth.getUser();const {error}=await db.from("evidence_records").insert({user_id:user.id,title,description,evidence_type:"project_output",source_kind:"creator_workspace",status:"submitted",provenance:{created_in:"sanggar_workspace"}});if(error)alert(error.message);else render((await db.auth.getSession()).data.session)});$("run-assessment").addEventListener("click",async()=>{const {data:{user}}=await db.auth.getUser();const {data:works}=await db.from("creator_gallery_items").select("id,title,description,media_type,asset_id,metadata,created_at").eq("user_id",user.id).order("created_at",{ascending:false}).limit(1);if(!works?.length)return alert("Upload karya terlebih dahulu.");await runMarketplaceAssessment(user,works[0]);});
 $("upload-work").addEventListener("click",async()=>{
  const {data:{user}}=await db.auth.getUser(); if(!user)return;
  const input=document.createElement("input"); input.type="file"; input.accept="image/*,video/*,audio/*,.glb,.gltf"; input.click();
- input.onchange=async()=>{const file=input.files?.[0];if(!file)return;
+ input.onchange=async()=>{
+  const file=input.files?.[0];if(!file)return;
   const title=prompt("Judul karya?",file.name.replace(/\\.[^.]+$/,""))||file.name;
   const description=prompt("Deskripsi karya?","")||"";
   const category=(prompt("Kategori: 3d / photo / design / motion / audio","photo")||"photo").toLowerCase();
   const ext=(file.name.split(".").pop()||"bin").toLowerCase();
   const mediaType=file.type.startsWith("image/")?"image":file.type.startsWith("video/")?"video":file.type.startsWith("audio/")?"audio":(ext==="glb"||ext==="gltf"?"3d":"document");
-  const path=user.id+"/"+Date.now()+"-"+file.name.replace(/[^a-zA-Z0-9._-]/g,"-");
+  const path=user.id+"/"+crypto.randomUUID()+"-"+file.name.replace(/[^a-zA-Z0-9._-]/g,"-");
   const {error:up}=await db.storage.from("creator-gallery").upload(path,file,{contentType:file.type||"application/octet-stream",upsert:false});
   if(up)return alert("Upload gagal: "+up.message);
   const {data:pub}=db.storage.from("creator-gallery").getPublicUrl(path);
-  const {data:asset,error:ae}=await db.from("creator_assets").insert({user_id:user.id,storage_path:path,file_name:file.name,mime_type:file.type||"application/octet-stream",size_bytes:file.size,media_type:mediaType,title,description,category,status:"ready",provenance:{upload:"creator_workspace",storage_bucket:"creator-gallery",public_publish:true}}).select().single();
+  const metadata={category,original_file_name:file.name,size_bytes:file.size,mime_type:file.type||"application/octet-stream",storage_path:path,source:"creator_workspace_upload"};
+  const {data:asset,error:ae}=await db.from("creator_assets").insert({
+    user_id:user.id,storage_path:path,file_name:file.name,mime_type:file.type||"application/octet-stream",
+    size_bytes:file.size,media_type:mediaType,title,description,category,status:"ready",
+    metadata,provenance:{upload:"creator_workspace",storage_bucket:"creator-gallery",public_publish:true}
+  }).select().single();
   if(ae){await db.storage.from("creator-gallery").remove([path]);return alert("Metadata gagal: "+ae.message);}
   const {data:port}=await db.from("portfolios").select("id").eq("user_id",user.id).order("created_at",{ascending:false}).limit(1);
   const {data:pass}=await db.from("creative_passports").select("id").eq("user_id",user.id).order("created_at",{ascending:false}).limit(1);
-  const {data:g,error:ge}=await db.from("creator_gallery_items").insert({user_id:user.id,portfolio_id:port?.[0]?.id||null,asset_id:asset.id,title,description,media_type:mediaType,preview_url:pub.publicUrl,status:"published",featured:false,display_order:0,metadata:{category,creator_asset_id:asset.id,storage_path:path},published_at:new Date().toISOString()}).select().single();
-  if(ge)return alert("Asset tersimpan, tetapi Gallery gagal: "+ge.message);
-  if(port?.[0])await db.from("portfolio_items").insert({portfolio_id:port[0].id,title,description,position:0,visibility:"private"});
-  if(pass?.[0])await db.from("passport_items").insert({passport_id:pass[0].id,item_type:"portfolio_item",source_id:g.id,position:0,visibility:"private"});
-  alert("Karya berhasil di-upload dan dipublish ke Creator Gallery.");
+  const {data:g,error:ge}=await db.from("creator_gallery_items").insert({
+    user_id:user.id,portfolio_id:port?.[0]?.id||null,asset_id:asset.id,title,description,media_type:mediaType,
+    preview_url:pub.publicUrl,status:"published",featured:false,display_order:0,
+    metadata:{...metadata,creator_asset_id:asset.id},published_at:new Date().toISOString()
+  }).select().single();
+  if(ge){await db.from("creator_assets").delete().eq("id",asset.id).eq("user_id",user.id);await db.storage.from("creator-gallery").remove([path]);return alert("Gallery gagal: "+ge.message);}
+  const {data:evidence,error:ee}=await db.from("evidence_records").insert({
+    user_id:user.id,title,description,evidence_type:"project_output",source_kind:"creator_asset",
+    source_reference_id:asset.id,status:"submitted",
+    provenance:{created_in:"sanggar_workspace",asset_id:asset.id,gallery_item_id:g.id,storage_path:path}
+  }).select().single();
+  if(ee)return alert("Karya sudah tampil di Gallery, tetapi evidence otomatis gagal dibuat: "+ee.message);
+  if(port?.[0])await db.from("portfolio_items").insert({
+    portfolio_id:port[0].id,evidence_id:evidence.id,title,description,position:0,visibility:"private"
+  });
+  if(pass?.[0])await db.from("passport_items").insert({
+    passport_id:pass[0].id,item_type:"portfolio_item",source_id:g.id,position:0,visibility:"private"
+  });
+  alert("Karya siap: Asset → Evidence → Gallery → Portfolio/Passport (jika tersedia). Tidak perlu memasukkan URL preview manual.");
   render((await db.auth.getSession()).data.session);
  };
-});
-$("publish-work").addEventListener("click",async()=>{
- const {data:{user}}=await db.auth.getUser();
- const {data:ev}=await db.from("evidence_records").select("id,title,description").eq("user_id",user.id).order("created_at",{ascending:false}).limit(1);
- const {data:ports}=await db.from("portfolios").select("id,title").eq("user_id",user.id).order("created_at",{ascending:false});
- const {data:passports}=await db.from("creative_passports").select("id,display_name").eq("user_id",user.id).order("created_at",{ascending:false});
- if(!ev?.length||!ports?.length||!passports?.length)return alert("Buat minimal 1 Evidence, Portfolio, dan Creative Passport terlebih dahulu.");
- const e=ev[0],p=ports[0],pass=passports[0];
- const media_type=(prompt("Media type?","image")||"image").toLowerCase();
- const preview_url=prompt("URL preview karya (opsional)?","")||null;
- const {data:g,error:ge}=await db.from("creator_gallery_items").insert({user_id:user.id,portfolio_id:p.id,title:e.title,description:e.description,media_type,preview_url,status:"published",featured:false,display_order:0,metadata:{source_evidence_id:e.id,created_from:"sanggar_workspace"},published_at:new Date().toISOString()}).select().single();
- if(ge)return alert("Gallery gagal: "+ge.message);
- const {error:pe}=await db.from("portfolio_items").insert({portfolio_id:p.id,evidence_id:e.id,title:e.title,description:e.description,position:0,visibility:"private"});
- if(pe)return alert("Gallery berhasil, Portfolio item gagal: "+pe.message);
- const {error:pae}=await db.from("passport_items").insert({passport_id:pass.id,item_type:"portfolio_item",source_id:g.id,position:0,visibility:"private"});
- if(pae)return alert("Gallery + Portfolio berhasil, Passport item gagal: "+pae.message);
- alert("Karya berhasil ditampilkan dan dihubungkan ke Gallery, Portfolio, dan Creative Passport.");
- render((await db.auth.getSession()).data.session);
 });
 $("export-package").addEventListener("click",async()=>{const {data:{user}}=await db.auth.getUser();const {data:p}=await db.from("creator_submission_packages").select("id,title,status,content_type,metadata,rights_evidence,release_evidence,provenance,package_manifest,external_submission_url,created_at").eq("user_id",user.id).order("created_at",{ascending:false}).limit(1);if(!p?.length)return alert("Belum ada paket pengajuan.");const blob=new Blob([JSON.stringify(p[0],null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=(p[0].title||"sanggar-paket-pengajuan").replace(/[^a-z0-9-_]+/gi,"-").slice(0,80)+".json";a.click();URL.revokeObjectURL(url)});load();
 </script><script src="companion.js?v=4" defer></script></body></html>
